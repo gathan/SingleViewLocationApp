@@ -7,8 +7,11 @@
 //
 
 #import "AllVenuesMapViewController.h"
+#import "ProjectLocationManager.h"
 
-@interface AllVenuesMapViewController ()
+@interface AllVenuesMapViewController () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) ProjectLocationManager *projectLocationManager;
 
 @end
 
@@ -22,6 +25,25 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self.projectLocationManager addDelegate:self];
+    [self.projectLocationManager userExplicitlyRequestedLocationAccess];//This is the best time to ask for user's will to give location data to us. It could be when user tapped a button if there was one to activate location (Apple documentation says:   locationServicesEnabled...You may want to check this property and use location services only when explicitly requested by the user.)
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations{
+    
+}
+
+#pragma mark - Properties
+
+- (ProjectLocationManager*)projectLocationManager{
+    if (!_projectLocationManager) {
+        _projectLocationManager = [ProjectLocationManager sharedManager];
+    }
+    return _projectLocationManager;
 }
 
 #pragma mark - Class Methods

@@ -41,8 +41,6 @@ static ProjectLocationManager *sharedManager;//this is a singleton
     self = [super init];
     if (self) {
         self.delegate = self;
-        //todo: debug clean up
-        [ProjectLocationManager didShowAuthorizationMessageOnce];
     }
     return self;
 }
