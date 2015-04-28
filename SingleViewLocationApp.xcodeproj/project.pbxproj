@@ -38,6 +38,7 @@
 		2B545D011AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545D001AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager.m */; };
 		2B545D051AF035E300C4B864 /* GoogleMapsProjectGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545D041AF035E300C4B864 /* GoogleMapsProjectGeocoder.m */; };
 		2B545D071AF0375600C4B864 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B545D061AF0375600C4B864 /* GoogleMaps.bundle */; };
+		2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		2B545D031AF035E300C4B864 /* GoogleMapsProjectGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsProjectGeocoder.h; sourceTree = "<group>"; };
 		2B545D041AF035E300C4B864 /* GoogleMapsProjectGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsProjectGeocoder.m; sourceTree = "<group>"; };
 		2B545D061AF0375600C4B864 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2B545D091AF03EA000C4B864 /* NSObject+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ProjectAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,7 @@
 		2B545CA61AF024FD00C4B864 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2B545D081AF03E8A00C4B864 /* NSObject */,
 				2B545CD21AF026E800C4B864 /* UIApplication */,
 				2B545CC71AF026C200C4B864 /* NSString */,
 				2B545CCA1AF026C200C4B864 /* UIViewController */,
@@ -353,6 +357,15 @@
 			path = GoogleMapsAPI;
 			sourceTree = "<group>";
 		};
+		2B545D081AF03E8A00C4B864 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B545D091AF03EA000C4B864 /* NSObject+ProjectAdditions.h */,
+				2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +476,7 @@
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
+				2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */,
 				2B545CCD1AF026C200C4B864 /* NSString+ProjectAdditions.m in Sources */,
 				2B545CF91AF033EE00C4B864 /* ProjectGoogleMapsManager.m in Sources */,
 				2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */,

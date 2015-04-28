@@ -11,5 +11,8 @@
 @interface UIApplication (ProjectAdditions)
 
 + (BOOL)iOSLessThan8;
++ (NSString*)applicationDocumentsDirectoryString;
++ (NSURL*)applcationDocumentsDirectoryURL;
++ (void)logApplicationDocumentsDirectoryString;
 
 @end

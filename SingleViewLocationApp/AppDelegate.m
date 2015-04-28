@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIApplication+ProjectAdditions.h"
 #import "AllVenuesMapViewController.h"
 #import "ProjectNavigationController.h"
 #import "SingleViewLocationAppGoogleMapsManager.h"
@@ -21,6 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [UIApplication logApplicationDocumentsDirectoryString];
     [self presentInitialViewController];
     [SingleViewLocationAppGoogleMapsManager prepareAfterAppDidFinishLaunching];
     
