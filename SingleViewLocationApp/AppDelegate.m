@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AllVenuesMapViewController.h"
+#import "ProjectNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +16,12 @@
 
 @implementation AppDelegate
 
+#pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self presentInitialViewController];
+    
     return YES;
 }
 
@@ -40,6 +45,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Actions
+
+-(void)presentInitialViewController{
+    AllVenuesMapViewController *allVenuesMapViewController = [AllVenuesMapViewController defaultAllVenuesMapViewController];
+    ProjectNavigationController *projectNavigationController = [[ProjectNavigationController alloc]initWithRootViewController:allVenuesMapViewController];
+    [projectNavigationController setNavigationBarHidden:NO animated:YES];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:projectNavigationController];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
 }
 
 @end

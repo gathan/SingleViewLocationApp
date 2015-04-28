@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		2B545C821AF0243C00C4B864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C811AF0243C00C4B864 /* main.m */; };
 		2B545C851AF0243C00C4B864 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C841AF0243C00C4B864 /* AppDelegate.m */; };
-		2B545C881AF0243C00C4B864 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C871AF0243C00C4B864 /* ViewController.m */; };
-		2B545C8B1AF0243C00C4B864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B545C891AF0243C00C4B864 /* Main.storyboard */; };
 		2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B545C8C1AF0243C00C4B864 /* Images.xcassets */; };
 		2B545C901AF0243C00C4B864 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B545C8E1AF0243C00C4B864 /* LaunchScreen.xib */; };
 		2B545C9C1AF0243D00C4B864 /* SingleViewLocationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C9B1AF0243D00C4B864 /* SingleViewLocationAppTests.m */; };
+		2B545CB71AF0256F00C4B864 /* ProjectNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CB31AF0256F00C4B864 /* ProjectNavigationController.m */; };
+		2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CB61AF0256F00C4B864 /* ProjectViewController.m */; };
+		2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CBA1AF0257F00C4B864 /* ProjectLocationManager.m */; };
+		2B545CBD1AF0259000C4B864 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B545CBC1AF0259000C4B864 /* CoreLocation.framework */; };
+		2B545CCD1AF026C200C4B864 /* NSString+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CC91AF026C200C4B864 /* NSString+ProjectAdditions.m */; };
+		2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CCC1AF026C200C4B864 /* UIViewController+ProjectAdditions.m */; };
+		2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CD01AF026CE00C4B864 /* NSString+Translations.m */; };
+		2B545CD51AF026F500C4B864 /* UIApplication+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CD41AF026F500C4B864 /* UIApplication+ProjectAdditions.m */; };
+		2B545CDA1AF0275200C4B864 /* AllVenuesMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545CD81AF0275200C4B864 /* AllVenuesMapViewController.m */; };
+		2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B545CD91AF0275200C4B864 /* AllVenuesMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +40,29 @@
 		2B545C811AF0243C00C4B864 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B545C831AF0243C00C4B864 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B545C841AF0243C00C4B864 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2B545C861AF0243C00C4B864 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2B545C871AF0243C00C4B864 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2B545C8A1AF0243C00C4B864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B545C8C1AF0243C00C4B864 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B545C8F1AF0243C00C4B864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2B545C951AF0243D00C4B864 /* SingleViewLocationAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewLocationAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B545C9A1AF0243D00C4B864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B545C9B1AF0243D00C4B864 /* SingleViewLocationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleViewLocationAppTests.m; sourceTree = "<group>"; };
+		2B545CB21AF0256F00C4B864 /* ProjectNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectNavigationController.h; sourceTree = "<group>"; };
+		2B545CB31AF0256F00C4B864 /* ProjectNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectNavigationController.m; sourceTree = "<group>"; };
+		2B545CB51AF0256F00C4B864 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		2B545CB61AF0256F00C4B864 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		2B545CB91AF0257F00C4B864 /* ProjectLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLocationManager.h; sourceTree = "<group>"; };
+		2B545CBA1AF0257F00C4B864 /* ProjectLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLocationManager.m; sourceTree = "<group>"; };
+		2B545CBC1AF0259000C4B864 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2B545CC81AF026C200C4B864 /* NSString+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B545CC91AF026C200C4B864 /* NSString+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ProjectAdditions.m"; sourceTree = "<group>"; };
+		2B545CCB1AF026C200C4B864 /* UIViewController+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B545CCC1AF026C200C4B864 /* UIViewController+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProjectAdditions.m"; sourceTree = "<group>"; };
+		2B545CCF1AF026CE00C4B864 /* NSString+Translations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Translations.h"; sourceTree = "<group>"; };
+		2B545CD01AF026CE00C4B864 /* NSString+Translations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Translations.m"; sourceTree = "<group>"; };
+		2B545CD31AF026F500C4B864 /* UIApplication+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B545CD41AF026F500C4B864 /* UIApplication+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ProjectAdditions.m"; sourceTree = "<group>"; };
+		2B545CD71AF0275200C4B864 /* AllVenuesMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllVenuesMapViewController.h; sourceTree = "<group>"; };
+		2B545CD81AF0275200C4B864 /* AllVenuesMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllVenuesMapViewController.m; sourceTree = "<group>"; };
+		2B545CD91AF0275200C4B864 /* AllVenuesMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllVenuesMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B545CBD1AF0259000C4B864 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +87,7 @@
 		2B545C731AF0243C00C4B864 = {
 			isa = PBXGroup;
 			children = (
+				2B545CDC1AF029BF00C4B864 /* Frameworks */,
 				2B545C7E1AF0243C00C4B864 /* SingleViewLocationApp */,
 				2B545C981AF0243D00C4B864 /* SingleViewLocationAppTests */,
 				2B545C7D1AF0243C00C4B864 /* Products */,
@@ -81,11 +106,13 @@
 		2B545C7E1AF0243C00C4B864 /* SingleViewLocationApp */ = {
 			isa = PBXGroup;
 			children = (
+				2B545CA81AF024FD00C4B864 /* Configuration */,
+				2B545CA51AF024FD00C4B864 /* BaseClasses */,
+				2B545CA61AF024FD00C4B864 /* Categories */,
+				2B545CA71AF024FD00C4B864 /* Classes */,
+				2B545CA91AF024FD00C4B864 /* Model */,
 				2B545C831AF0243C00C4B864 /* AppDelegate.h */,
 				2B545C841AF0243C00C4B864 /* AppDelegate.m */,
-				2B545C861AF0243C00C4B864 /* ViewController.h */,
-				2B545C871AF0243C00C4B864 /* ViewController.m */,
-				2B545C891AF0243C00C4B864 /* Main.storyboard */,
 				2B545C8C1AF0243C00C4B864 /* Images.xcassets */,
 				2B545C8E1AF0243C00C4B864 /* LaunchScreen.xib */,
 				2B545C7F1AF0243C00C4B864 /* Supporting Files */,
@@ -117,6 +144,122 @@
 				2B545C9A1AF0243D00C4B864 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B545CA51AF024FD00C4B864 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CB41AF0256F00C4B864 /* ProjectViewController */,
+				2B545CB11AF0256F00C4B864 /* ProjectNavigationController */,
+				2B545CB01AF0256F00C4B864 /* ProjectLocationManager */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		2B545CA61AF024FD00C4B864 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CD21AF026E800C4B864 /* UIApplication */,
+				2B545CC71AF026C200C4B864 /* NSString */,
+				2B545CCA1AF026C200C4B864 /* UIViewController */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2B545CA71AF024FD00C4B864 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CD61AF0273E00C4B864 /* AllVenuesMapViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2B545CA81AF024FD00C4B864 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2B545CA91AF024FD00C4B864 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B545CB01AF0256F00C4B864 /* ProjectLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CB91AF0257F00C4B864 /* ProjectLocationManager.h */,
+				2B545CBA1AF0257F00C4B864 /* ProjectLocationManager.m */,
+			);
+			path = ProjectLocationManager;
+			sourceTree = "<group>";
+		};
+		2B545CB11AF0256F00C4B864 /* ProjectNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CB21AF0256F00C4B864 /* ProjectNavigationController.h */,
+				2B545CB31AF0256F00C4B864 /* ProjectNavigationController.m */,
+			);
+			path = ProjectNavigationController;
+			sourceTree = "<group>";
+		};
+		2B545CB41AF0256F00C4B864 /* ProjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CB51AF0256F00C4B864 /* ProjectViewController.h */,
+				2B545CB61AF0256F00C4B864 /* ProjectViewController.m */,
+			);
+			path = ProjectViewController;
+			sourceTree = "<group>";
+		};
+		2B545CC71AF026C200C4B864 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CC81AF026C200C4B864 /* NSString+ProjectAdditions.h */,
+				2B545CC91AF026C200C4B864 /* NSString+ProjectAdditions.m */,
+				2B545CCF1AF026CE00C4B864 /* NSString+Translations.h */,
+				2B545CD01AF026CE00C4B864 /* NSString+Translations.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		2B545CCA1AF026C200C4B864 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CCB1AF026C200C4B864 /* UIViewController+ProjectAdditions.h */,
+				2B545CCC1AF026C200C4B864 /* UIViewController+ProjectAdditions.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		2B545CD21AF026E800C4B864 /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CD31AF026F500C4B864 /* UIApplication+ProjectAdditions.h */,
+				2B545CD41AF026F500C4B864 /* UIApplication+ProjectAdditions.m */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		2B545CD61AF0273E00C4B864 /* AllVenuesMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CD71AF0275200C4B864 /* AllVenuesMapViewController.h */,
+				2B545CD81AF0275200C4B864 /* AllVenuesMapViewController.m */,
+				2B545CD91AF0275200C4B864 /* AllVenuesMapViewController.xib */,
+			);
+			path = AllVenuesMapViewController;
+			sourceTree = "<group>";
+		};
+		2B545CDC1AF029BF00C4B864 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B545CBC1AF0259000C4B864 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +342,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B545C8B1AF0243C00C4B864 /* Main.storyboard in Resources */,
 				2B545C901AF0243C00C4B864 /* LaunchScreen.xib in Resources */,
+				2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */,
 				2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +362,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B545C881AF0243C00C4B864 /* ViewController.m in Sources */,
+				2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */,
 				2B545C851AF0243C00C4B864 /* AppDelegate.m in Sources */,
+				2B545CD51AF026F500C4B864 /* UIApplication+ProjectAdditions.m in Sources */,
+				2B545CDA1AF0275200C4B864 /* AllVenuesMapViewController.m in Sources */,
+				2B545CB71AF0256F00C4B864 /* ProjectNavigationController.m in Sources */,
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
+				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
+				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
+				2B545CCD1AF026C200C4B864 /* NSString+ProjectAdditions.m in Sources */,
+				2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +394,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2B545C891AF0243C00C4B864 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2B545C8A1AF0243C00C4B864 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2B545C8E1AF0243C00C4B864 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
