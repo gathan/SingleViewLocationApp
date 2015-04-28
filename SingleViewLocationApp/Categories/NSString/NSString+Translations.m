@@ -10,4 +10,8 @@
 
 @implementation NSString (Translations)
 
+- (NSString*)translate{//will return just self for this example project for the time
+    return self;
+}
+
 @end
