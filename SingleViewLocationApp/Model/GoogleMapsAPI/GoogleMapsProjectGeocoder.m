@@ -7,6 +7,7 @@
 //
 
 #import "GoogleMapsProjectGeocoder.h"
+#import "NSString+ProjectAdditions.h"
 
 @implementation GoogleMapsProjectGeocoder
 
@@ -19,12 +20,16 @@
                 [self.delegate googleMapsProjectGeocoder:self
             successfullyReverseGeocodedGMSAddress:address];
             }
+            NSString *logString = [NSString stringWithFormat:@"GMSGeocoder reverse Geocoded Address: %@", address.thoroughfare];
+            [logString log];
         }
         else
         {
             if (self.delegate && [self.delegate respondsToSelector:@selector(googleMapsProjectGeocoder:didFailReverseGeocodingGMSAddressWithError:)]) {
                 [self.delegate googleMapsProjectGeocoder:self didFailReverseGeocodingGMSAddressWithError:error];
             }
+            NSString *logString = [NSString stringWithFormat:@"GMSGeocoder failed to reverse geocode with error: %@", error.description];
+            [logString log];
         }
     };
     
