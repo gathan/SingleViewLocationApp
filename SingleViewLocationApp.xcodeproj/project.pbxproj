@@ -46,6 +46,7 @@
 		2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B9B1AF1794900E331AE /* ProjectFourSquareDataSource.m */; };
 		2BFE8BA41AF1794900E331AE /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B9E1AF1794900E331AE /* Venue.m */; };
 		2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BA01AF1794900E331AE /* VenueDataSource.m */; };
+		2BFE8BA91AF19BB500E331AE /* Akadimias20.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2BFE8BA81AF19BB500E331AE /* Akadimias20.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		2BFE8B9E1AF1794900E331AE /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		2BFE8B9F1AF1794900E331AE /* VenueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDataSource.h; sourceTree = "<group>"; };
 		2BFE8BA01AF1794900E331AE /* VenueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDataSource.m; sourceTree = "<group>"; };
+		2BFE8BA81AF19BB500E331AE /* Akadimias20.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Akadimias20.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		2B545C731AF0243C00C4B864 = {
 			isa = PBXGroup;
 			children = (
+				2BFE8BA61AF19B8D00E331AE /* GPXFiles */,
 				2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */,
 				2B545D0C1AF042BF00C4B864 /* Frameworks */,
 				2B545C7E1AF0243C00C4B864 /* SingleViewLocationApp */,
@@ -425,6 +428,14 @@
 			path = Venue;
 			sourceTree = "<group>";
 		};
+		2BFE8BA61AF19B8D00E331AE /* GPXFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8BA81AF19BB500E331AE /* Akadimias20.gpx */,
+			);
+			path = GPXFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,6 +518,7 @@
 			files = (
 				2B545C901AF0243C00C4B864 /* LaunchScreen.xib in Resources */,
 				2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */,
+				2BFE8BA91AF19BB500E331AE /* Akadimias20.gpx in Resources */,
 				2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */,
 				2B545D101AF042E400C4B864 /* GoogleMaps.bundle in Resources */,
 			);
