@@ -39,6 +39,13 @@
 		2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */; };
 		2B545D0E1AF042BF00C4B864 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B545D0D1AF042BF00C4B864 /* GoogleMaps.framework */; };
 		2B545D101AF042E400C4B864 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B545D0F1AF042E400C4B864 /* GoogleMaps.bundle */; };
+		2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B911AF1792700E331AE /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BFE8B951AF1792700E331AE /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B931AF1792700E331AE /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B971AF1794900E331AE /* FourSquareDataSource.m */; };
+		2BFE8BA21AF1794900E331AE /* FourSquareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B991AF1794900E331AE /* FourSquareObject.m */; };
+		2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B9B1AF1794900E331AE /* ProjectFourSquareDataSource.m */; };
+		2BFE8BA41AF1794900E331AE /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B9E1AF1794900E331AE /* Venue.m */; };
+		2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8BA01AF1794900E331AE /* VenueDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +108,20 @@
 		2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ProjectAdditions.m"; sourceTree = "<group>"; };
 		2B545D0D1AF042BF00C4B864 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		2B545D0F1AF042E400C4B864 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2BFE8B901AF1792700E331AE /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
+		2BFE8B911AF1792700E331AE /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
+		2BFE8B921AF1792700E331AE /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
+		2BFE8B931AF1792700E331AE /* BZFoursquareRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquareRequest.m; sourceTree = "<group>"; };
+		2BFE8B961AF1794900E331AE /* FourSquareDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourSquareDataSource.h; sourceTree = "<group>"; };
+		2BFE8B971AF1794900E331AE /* FourSquareDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourSquareDataSource.m; sourceTree = "<group>"; };
+		2BFE8B981AF1794900E331AE /* FourSquareObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourSquareObject.h; sourceTree = "<group>"; };
+		2BFE8B991AF1794900E331AE /* FourSquareObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourSquareObject.m; sourceTree = "<group>"; };
+		2BFE8B9A1AF1794900E331AE /* ProjectFourSquareDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectFourSquareDataSource.h; sourceTree = "<group>"; };
+		2BFE8B9B1AF1794900E331AE /* ProjectFourSquareDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectFourSquareDataSource.m; sourceTree = "<group>"; };
+		2BFE8B9D1AF1794900E331AE /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		2BFE8B9E1AF1794900E331AE /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		2BFE8B9F1AF1794900E331AE /* VenueDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDataSource.h; sourceTree = "<group>"; };
+		2BFE8BA01AF1794900E331AE /* VenueDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +158,7 @@
 		2B545C731AF0243C00C4B864 = {
 			isa = PBXGroup;
 			children = (
+				2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */,
 				2B545D0C1AF042BF00C4B864 /* Frameworks */,
 				2B545C7E1AF0243C00C4B864 /* SingleViewLocationApp */,
 				2B545C981AF0243D00C4B864 /* SingleViewLocationAppTests */,
@@ -237,6 +259,13 @@
 		2B545CA91AF024FD00C4B864 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BFE8B961AF1794900E331AE /* FourSquareDataSource.h */,
+				2BFE8B971AF1794900E331AE /* FourSquareDataSource.m */,
+				2BFE8B981AF1794900E331AE /* FourSquareObject.h */,
+				2BFE8B991AF1794900E331AE /* FourSquareObject.m */,
+				2BFE8B9A1AF1794900E331AE /* ProjectFourSquareDataSource.h */,
+				2BFE8B9B1AF1794900E331AE /* ProjectFourSquareDataSource.m */,
+				2BFE8B9C1AF1794900E331AE /* Venue */,
 				2B545D021AF035E300C4B864 /* GoogleMapsAPI */,
 			);
 			path = Model;
@@ -365,6 +394,37 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8B8F1AF1792700E331AE /* BZFoursquare */,
+			);
+			path = ThirdPartySoftware;
+			sourceTree = "<group>";
+		};
+		2BFE8B8F1AF1792700E331AE /* BZFoursquare */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8B901AF1792700E331AE /* BZFoursquare.h */,
+				2BFE8B911AF1792700E331AE /* BZFoursquare.m */,
+				2BFE8B921AF1792700E331AE /* BZFoursquareRequest.h */,
+				2BFE8B931AF1792700E331AE /* BZFoursquareRequest.m */,
+			);
+			name = BZFoursquare;
+			path = "Submodules/foursquare-ios-api/BZFoursquare";
+			sourceTree = SOURCE_ROOT;
+		};
+		2BFE8B9C1AF1794900E331AE /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				2BFE8B9D1AF1794900E331AE /* Venue.h */,
+				2BFE8B9E1AF1794900E331AE /* Venue.m */,
+				2BFE8B9F1AF1794900E331AE /* VenueDataSource.h */,
+				2BFE8BA01AF1794900E331AE /* VenueDataSource.m */,
+			);
+			path = Venue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,18 +527,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */,
+				2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */,
+				2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */,
 				2B545C851AF0243C00C4B864 /* AppDelegate.m in Sources */,
+				2BFE8B951AF1792700E331AE /* BZFoursquareRequest.m in Sources */,
 				2B545CD51AF026F500C4B864 /* UIApplication+ProjectAdditions.m in Sources */,
 				2B545CDA1AF0275200C4B864 /* AllVenuesMapViewController.m in Sources */,
 				2B545CB71AF0256F00C4B864 /* ProjectNavigationController.m in Sources */,
+				2BFE8BA21AF1794900E331AE /* FourSquareObject.m in Sources */,
 				2B545D051AF035E300C4B864 /* GoogleMapsProjectGeocoder.m in Sources */,
+				2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */,
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
+				2BFE8BA41AF1794900E331AE /* Venue.m in Sources */,
 				2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */,
 				2B545CCD1AF026C200C4B864 /* NSString+ProjectAdditions.m in Sources */,
 				2B545CF91AF033EE00C4B864 /* ProjectGoogleMapsManager.m in Sources */,
 				2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */,
+				2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */,
 				2B545D011AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +741,7 @@
 				2B545CA11AF0243D00C4B864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B545CA21AF0243D00C4B864 /* Build configuration list for PBXNativeTarget "SingleViewLocationAppTests" */ = {
 			isa = XCConfigurationList;
@@ -682,6 +750,7 @@
 				2B545CA41AF0243D00C4B864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
