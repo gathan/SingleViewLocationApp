@@ -11,11 +11,8 @@
 #import "AllVenuesMapViewController.h"
 #import "ProjectNavigationController.h"
 #import "SingleViewLocationAppGoogleMapsManager.h"
-#import "VenueDataSource.h"
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong) VenueDataSource *venueDataSource;
 
 @end
 
@@ -24,10 +21,6 @@
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    self.venueDataSource = [[VenueDataSource alloc]init];
-    [self.venueDataSource fetchVenuesForLocationCoordinate:CLLocationCoordinate2DMake(37.980632, 23.732862)];
-    
     [UIApplication logApplicationDocumentsDirectoryString];
     [self presentInitialViewController];
     [SingleViewLocationAppGoogleMapsManager prepareAfterAppDidFinishLaunching];

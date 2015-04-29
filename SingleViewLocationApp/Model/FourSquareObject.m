@@ -15,6 +15,18 @@
 
 @implementation FourSquareObject
 
+- (BOOL)isEqual:(id)object{
+    BOOL isEqual = NO;
+    if ([object isKindOfClass:[FourSquareObject class]]) {
+        FourSquareObject *otherObject = (FourSquareObject*)object;
+        if ([otherObject.codeId isStringAndNotEmpty] && [self.codeId isStringAndNotEmpty] &&
+            [otherObject.codeId isEqualToString:self.codeId]){
+            isEqual = YES;
+        }
+    }
+    return isEqual;
+}
+
 + (NSDictionary*)propertiesAndKeysDictionary{
     NSDictionary *propertiesAndKeysDictionary = @{@"id" : @"codeId"};
     return propertiesAndKeysDictionary;

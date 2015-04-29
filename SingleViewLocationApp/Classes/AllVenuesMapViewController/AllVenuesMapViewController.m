@@ -9,12 +9,17 @@
 #import "AllVenuesMapViewController.h"
 #import "ProjectLocationManager.h"
 #import "GoogleMapsProjectGeocoder.h"
+#import "VenueDataSource.h"
+#import "Venue.h"
 
-@interface AllVenuesMapViewController () <CLLocationManagerDelegate, GoogleMapsProjectGeocoderDelegate>
+@interface AllVenuesMapViewController () <CLLocationManagerDelegate, GoogleMapsProjectGeocoderDelegate, FourSquareDelegate>
 
 @property (nonatomic, strong) ProjectLocationManager *locationManager;
 @property (nonatomic, strong) GoogleMapsProjectGeocoder *geocoder;
 @property (nonatomic, strong) GMSAddress *latestGMSAddress;
+@property (nonatomic, strong) VenueDataSource *venueDataSource;
+
+@property (nonatomic, strong) NSMutableArray *venuesMutableArray;
 
 @end
 
@@ -31,6 +36,7 @@
     
     [self.locationManager addDelegate:self];
     [self.locationManager userExplicitlyRequestedLocationAccess];//This is the best time to ask for user's will to give location data to us. It could be when user tapped a button if there was one to activate location (Apple documentation says:   locationServicesEnabled...You may want to check this property and use location services only when explicitly requested by the user.)
+    self.venueDataSource.delegate = self;
 }
 
 - (void)updateUI{
@@ -40,6 +46,7 @@
 #pragma mark - Actions
 
 - (void)reverseGeocodeLocation:(CLLocation*)location{
+
     [self.geocoder startReverseGeocodingGMSAddressForCLLocationCoordinate:location.coordinate];
 }
 
@@ -61,6 +68,28 @@
     }
 }
 
+#pragma mark - FourSquareDelegate
+
+- (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource successfullyFetchedFourSquareObjects:(NSArray*)foursquareObjectsArray{
+    if (fourSquareDataSource == self.venueDataSource)
+    {
+        NSMutableArray *copyOfVenuesMutableArray = [self.venuesMutableArray copy];
+        for (Venue *venue in foursquareObjectsArray) {
+            if (![copyOfVenuesMutableArray containsObject:venue]) {
+                [copyOfVenuesMutableArray addObject:venue];
+            }
+        }
+        
+        self.venuesMutableArray = copyOfVenuesMutableArray;
+        //reload
+    }
+}
+
+- (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource
+             failedWithError:(NSError*)error{
+
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
@@ -68,6 +97,7 @@
     if (veryFirstLocation) {
         [self.locationManager removeDelegate:self];
         [self reverseGeocodeLocation:veryFirstLocation];
+        [self.venueDataSource fetchVenuesForLocationCoordinate:veryFirstLocation.coordinate];
     }
 }
 
@@ -86,6 +116,13 @@
         _locationManager = [ProjectLocationManager sharedManager];
     }
     return _locationManager;
+}
+
+- (VenueDataSource*)venueDataSource{
+    if (!_venueDataSource) {
+        _venueDataSource = [[VenueDataSource alloc]init];
+    }
+    return _venueDataSource;
 }
 
 #pragma mark - Class Methods
