@@ -33,8 +33,10 @@
         }
     };
     
-    [self reverseGeocodeCoordinate:locationCoordinate
+    dispatch_async(dispatch_get_main_queue(), ^{//'All calls to the Google Maps SDK for iOS must be made from the UI thread'
+        [self reverseGeocodeCoordinate:locationCoordinate
                  completionHandler:handler];
+    });
 }
 
 @end
