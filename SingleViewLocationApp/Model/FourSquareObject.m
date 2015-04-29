@@ -7,7 +7,58 @@
 //
 
 #import "FourSquareObject.h"
+#import "NSObject+ProjectAdditions.h"
+
+@interface FourSquareObject ()
+
+@end
 
 @implementation FourSquareObject
+
++ (NSDictionary*)propertiesAndKeysDictionary{
+    NSDictionary *propertiesAndKeysDictionary = @{@"id" : @"codeId"};
+    return propertiesAndKeysDictionary;
+}
+
++ (NSString*)propertyNameForKey:(NSString*)key{
+    NSDictionary *propertiesAndKeysDictionary = [[self class] propertiesAndKeysDictionary];
+    NSString *propertyNameForKey = [propertiesAndKeysDictionary objectForKey:key];
+    return propertyNameForKey;
+}
+
+- (void)setObject:(NSObject*)object forKey:(NSString*)key{
+    NSString *propertyNameForKey = [[self class] propertyNameForKey:key];
+    
+    if (object && propertyNameForKey)
+    {
+        [self setValue:object forKey:propertyNameForKey];
+    }
+}
+
+- (NSDictionary*)parseObjectDictionaryFromObject:(NSObject*)object forKey:(NSString*)key{
+    NSMutableDictionary *objectDictionary = [[NSMutableDictionary alloc]init];
+    if (key) {
+        [self setObject:object forKey:key];
+    }
+    
+    return objectDictionary;
+}
+
+- (void)fullfillDataFromFoursquareDictionary:(NSDictionary*)foursquareDictionary{
+    for (NSString *key in foursquareDictionary.allKeys) {
+        NSObject *object = [foursquareDictionary objectForKey:key];
+        [self parseObjectDictionaryFromObject:object forKey:key];
+    }
+}
+
+- (NSString*)description{
+    NSMutableString *descriptionMutableString = [[NSMutableString alloc]initWithString:[super description]];
+    
+    if ([self.codeId isStringAndNotEmpty]){
+        [descriptionMutableString appendFormat:@" | codeId = %@", self.codeId];
+    }
+    
+    return descriptionMutableString;
+}
 
 @end

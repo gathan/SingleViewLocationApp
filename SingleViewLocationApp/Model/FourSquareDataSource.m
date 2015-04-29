@@ -9,6 +9,7 @@
 #import "FourSquareDataSource.h"
 #import "BZFoursquare.h"
 #import "NSString+ProjectAdditions.h"
+#import "FourSquareObject.h"
 
 @interface FourSquareDataSource ()
 
@@ -70,14 +71,33 @@
     [@"Foursquare Request did start loading" log];
 }
 
-- (NSArray*)foursquareObjectsFromResponseDictionary:(NSDictionary*)responseDictionary{
+- (NSArray*)foursquareObjectsFromResponseObjectsArray:(NSArray*)responseObjectsArray{
+    Class classToParse = [self classToParse];
     
-    return nil;
+    NSMutableArray *foursquareObjectsMutableArray = [[NSMutableArray alloc]init];
+    
+    for (NSDictionary *foursquareObjectDictionary in responseObjectsArray)
+    {
+        FourSquareObject *foursquareObject = (FourSquareObject*)[[classToParse alloc]init];
+        
+        [foursquareObject fullfillDataFromFoursquareDictionary:foursquareObjectDictionary];
+        
+        [foursquareObjectsMutableArray addObject:foursquareObject];
+        
+        NSString *logString = [NSString stringWithFormat:@"Parsed FoursquareObject: %@", foursquareObject];
+        [logString log];
+    }
+    
+    return foursquareObjectsMutableArray;
+}
+
+- (Class)classToParse{
+    return [FourSquareObject class];
 }
 
 - (void)requestDidFinishLoading:(BZFoursquareRequest *)request{
     [@"Foursquare Request did finish loading" log];
-    NSArray *foursquareObjects = [self foursquareObjectsFromResponseDictionary:[request.response objectForKey:@"venues"]];
+    NSArray *foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:[request.response objectForKey:@"venues"]];
     if (self.delegate && [self.delegate respondsToSelector:@selector(fourSquareDataSource:successfullyFetchedFourSquareObjects:)])
     {
         [self.delegate fourSquareDataSource:self successfullyFetchedFourSquareObjects:foursquareObjects];
@@ -122,7 +142,7 @@
     return nil;//please subclass foursquare datasource and ovveride this function
 }
 
-+ (NSString*)versionId{
++ (NSString*)versionID{
     return nil;
 }
 

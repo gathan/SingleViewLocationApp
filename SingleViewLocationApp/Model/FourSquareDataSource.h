@@ -31,7 +31,8 @@
 
 - (void)requestWithPath:(NSString*)path andParameters:(NSDictionary*)parameters;
 - (NSDictionary*)fullfilledDictionaryWithParametersDictionary:(NSDictionary*)parametersDictionary;
-- (NSArray*)foursquareObjectsFromResponseDictionary:(NSDictionary*)responseDictionary;
+- (NSArray*)foursquareObjectsFromResponseObjectsArray:(NSArray*)responseObjectsArray;
+- (Class)classToParse;
 
 + (NSString*)apiKey;//please subclass foursquare datasource and ovveride this function
 + (NSString*)callbackURL;//please subclass foursquare datasource and ovveride this function

@@ -7,6 +7,7 @@
 //
 
 #import "VenueDataSource.h"
+#import "Venue.h"
 #import <CoreLocation/CoreLocation.h>
 #import "NSString+ProjectAdditions.h"
 
@@ -25,6 +26,10 @@
     
     [self requestWithPath:urlForVenuesSearch
             andParameters:[self fullfilledDictionaryWithParametersDictionary:parameters]];
+}
+
+- (Class)classToParse{
+    return [Venue class];
 }
 
 #pragma mark - Class methods

@@ -10,4 +10,13 @@
 
 @interface FourSquareObject : NSObject
 
+
+@property (nonatomic, strong) NSString *codeId;
+
+- (void)fullfillDataFromFoursquareDictionary:(NSDictionary*)foursquareDictionary;
+- (void)setObject:(NSObject*)object forKey:(NSString*)key;
+- (NSDictionary*)parseObjectDictionaryFromObject:(NSObject*)object forKey:(NSString*)key;
+
++ (NSDictionary*)propertiesAndKeysDictionary;
+
 @end
