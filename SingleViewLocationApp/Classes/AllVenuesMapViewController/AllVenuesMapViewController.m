@@ -74,7 +74,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationItem.titleView = self.navigationItemCustomImageView;
+    self.navigationItem.titleView = self.navigationItemCustomImageView;
     
     BOOL hasFoundAddress = self.latestGMSAddress != nil;
     [self makeCurrentLocationViewHidden:!hasFoundAddress animated:NO];
