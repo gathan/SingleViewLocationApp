@@ -22,6 +22,10 @@
     return NO;
 }
 
+- (UIStatusBarStyle)statusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (UIFont*)titleTextFontWithSize:(CGFloat)size{
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
 }

@@ -56,7 +56,7 @@
     AllVenuesMapViewController *allVenuesMapViewController = [AllVenuesMapViewController defaultAllVenuesMapViewController];
     ProjectNavigationController *projectNavigationController = [[ProjectNavigationController alloc]initWithRootViewController:allVenuesMapViewController];
     [projectNavigationController setNavigationBarHidden:NO animated:YES];
-    
+        
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:projectNavigationController];
     self.window.backgroundColor = [UIColor whiteColor];

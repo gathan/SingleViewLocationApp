@@ -35,10 +35,13 @@
 @property (nonatomic, strong, readonly) UIColor *titleLabelColor;
 @property (nonatomic, strong, readonly) UIColor *titleLabelInvertedColor;
 
+- (UIStatusBarStyle)statusBarStyle;
+
 - (BOOL)translucentNavigationBar;
 
 - (UIFont*)titleTextFontWithSize:(CGFloat)size;
 - (UIFont*)bodyTextFontWithSize:(CGFloat)size;
+
 
 + (NSString*)colorsFileNameToUse;
 

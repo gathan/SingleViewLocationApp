@@ -31,6 +31,7 @@
     if (self = [super init])
     {
         [self setupColors];
+        [self setStatusBarColor];
     }
     return self;
 }
@@ -58,6 +59,16 @@
             [self setValue:color forKey:key];
         }
     }
+}
+
+- (void)setStatusBarColor{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] setStatusBarStyle:[self statusBarStyle] animated:YES];
+    });
+}
+
+- (UIStatusBarStyle)statusBarStyle{
+    return UIStatusBarStyleDefault;
 }
 
 // UIFontTextStyleHeadline NS_AVAILABLE_IOS(7_0);

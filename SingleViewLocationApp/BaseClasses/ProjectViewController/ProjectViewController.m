@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNeedsStatusBarAppearanceUpdate];
     [self updateTheme];
     self.automaticallyAdjustsScrollViewInsets = self.automaticallyAdjustsScrollViewInsets;    
 }
@@ -91,6 +92,10 @@
             [bodyInvertedLabel markLabelAsBodyInverted];
         }
     }
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return [[ProjectGraphicsProxy sharedProxy] statusBarStyle];
 }
 
 @end
