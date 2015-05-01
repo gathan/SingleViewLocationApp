@@ -7,8 +7,9 @@
 //
 
 #import "FourSquareObject.h"
+#import <MapKit/MapKit.h>
 
-@interface Venue : FourSquareObject
+@interface Venue : FourSquareObject <MKAnnotation>
 
 @property (nonatomic, strong) NSNumber *rating;
 

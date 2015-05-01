@@ -167,6 +167,7 @@
     if (!numberFormatter) {
         numberFormatter = [[NSNumberFormatter alloc]init];
         [numberFormatter setDecimalSeparator:@"."];
+        [numberFormatter setMaximumFractionDigits:15];
     }
     return numberFormatter;
 }

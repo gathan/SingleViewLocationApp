@@ -13,7 +13,7 @@
                 <outlet property="currentLocationTitleView" destination="FeI-Hq-sO5" id="eqi-sU-Lv6"/>
                 <outlet property="currentLocationView" destination="pA3-yP-Wq8" id="SJh-iP-1Dy"/>
                 <outlet property="currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint" destination="Mhv-ap-RfN" id="RgI-Pe-9Ul"/>
-                <outlet property="gmsMapView" destination="qSs-dc-an7" id="OqH-qT-EW0"/>
+                <outlet property="mapView" destination="qSs-dc-an7" id="K6a-QH-YJ4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,12 +22,14 @@
             <rect key="frame" x="0.0" y="64" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSs-dc-an7" customClass="GMSMapView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSs-dc-an7" customClass="MKMapView">
                     <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                     <color key="backgroundColor" red="0.12351940524193548" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Hp5-2R-j5i"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="900" translatesAutoresizingMaskIntoConstraints="NO" id="pA3-yP-Wq8" userLabel="Current Location View">
-                    <rect key="frame" x="0.0" y="499" width="600" height="101"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeI-Hq-sO5" userLabel="Current Location Title View">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
@@ -87,7 +89,7 @@
                         <constraint firstItem="FeI-Hq-sO5" firstAttribute="top" secondItem="pA3-yP-Wq8" secondAttribute="top" id="PTb-mT-dv7"/>
                         <constraint firstItem="sNQ-d5-yBL" firstAttribute="leading" secondItem="pA3-yP-Wq8" secondAttribute="leading" id="SPo-VM-xhb"/>
                         <constraint firstItem="sNQ-d5-yBL" firstAttribute="width" secondItem="FeI-Hq-sO5" secondAttribute="width" id="dT7-kg-em0"/>
-                        <constraint firstAttribute="bottom" secondItem="sNQ-d5-yBL" secondAttribute="bottom" id="eCG-Dj-CeW"/>
+                        <constraint firstAttribute="bottom" secondItem="sNQ-d5-yBL" secondAttribute="bottom" constant="-101" id="eCG-Dj-CeW"/>
                     </constraints>
                 </view>
             </subviews>

@@ -11,8 +11,11 @@
 #import "GoogleMapsProjectGeocoder.h"
 #import "VenueDataSource.h"
 #import "Venue.h"
+#import <MapKit/MapKit.h>
+#import "VenueAnnotationView.h"
+#import "UserLocationAnnotationView.h"
 
-@interface AllVenuesMapViewController () <CLLocationManagerDelegate, GoogleMapsProjectGeocoderDelegate, FourSquareDelegate>
+@interface AllVenuesMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, GoogleMapsProjectGeocoderDelegate, FourSquareDelegate>
 
 @property (nonatomic, strong) ProjectLocationManager *locationManager;
 @property (nonatomic, strong) GoogleMapsProjectGeocoder *geocoder;
@@ -27,7 +30,7 @@
 
 //TODO: give the right colors to the views.
 #pragma mark -- Map
-@property (weak, nonatomic) IBOutlet GMSMapView *gmsMapView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 #pragma mark -- Current location View
 @property (nonatomic, getter = isCurrentLocationViewHidden) BOOL currentLocationViewHidden;
@@ -53,7 +56,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading];
+    
 
+    [self.locationManager addDelegate:self];
+    [self.locationManager userExplicitlyRequestedLocationAccess];//This is the best time to ask for user's will to give location data to us. It could be when user tapped a button if there was one to activate location (Apple documentation says:   locationServicesEnabled...You may want to check this property and use location services only when explicitly requested by the user.)
+    self.venueDataSource.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -61,10 +70,6 @@
     
     BOOL hasFoundAddress = self.latestGMSAddress != nil;
     [self makeCurrentLocationViewHidden:!hasFoundAddress animated:NO];
-    
-    [self.locationManager addDelegate:self];
-    [self.locationManager userExplicitlyRequestedLocationAccess];//This is the best time to ask for user's will to give location data to us. It could be when user tapped a button if there was one to activate location (Apple documentation says:   locationServicesEnabled...You may want to check this property and use location services only when explicitly requested by the user.)
-    self.venueDataSource.delegate = self;
 }
 
 - (void)updateUI{
@@ -78,7 +83,9 @@
     [self.geocoder startReverseGeocodingGMSAddressForCLLocationCoordinate:location.coordinate];
 }
 
-#pragma mark - GoogleMapsProjectGeocoderDelegate
+#pragma mark - Delegates
+
+#pragma mark -- GoogleMapsProjectGeocoderDelegate
 
 - (void)googleMapsProjectGeocoder:(GoogleMapsProjectGeocoder *)googleMapsProjectGeocoder successfullyReverseGeocodedGMSAddress:(GMSAddress *)gmsAddress{
     self.latestGMSAddress = gmsAddress;
@@ -93,7 +100,7 @@
     }
 }
 
-#pragma mark - FourSquareDelegate
+#pragma mark -- FourSquareDelegate
 
 - (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource successfullyFetchedFourSquareObjects:(NSArray*)foursquareObjectsArray{
     if (fourSquareDataSource == self.venueDataSource)
@@ -102,6 +109,7 @@
         for (Venue *venue in foursquareObjectsArray) {
             if (![copyOfVenuesMutableArray containsObject:venue]) {
                 [copyOfVenuesMutableArray addObject:venue];
+                [self.mapView addAnnotation:venue];
             }
         }
         
@@ -115,7 +123,7 @@
 
 }
 
-#pragma mark - CLLocationManagerDelegate
+#pragma mark -- CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocation *veryFirstLocation = [locations firstObject];
@@ -126,6 +134,41 @@
         [self reverseGeocodeLocation:veryFirstLocation];
         [self.venueDataSource fetchVenuesForLocationCoordinate:veryFirstLocation.coordinate];
     }
+}
+
+#pragma mark -- MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self.venueDataSource fetchVenuesForLocationCoordinate:mapView.region.center];
+}
+
+- (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    MKAnnotationView *annotationViewToReturn;
+    if ([annotation isKindOfClass:[Venue class]])
+    {
+        VenueAnnotationView *venueAnnotationView = (VenueAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:[VenueAnnotationView defaultAnnotationIdentifier]];
+        
+        if (!venueAnnotationView) {
+            venueAnnotationView = [[VenueAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:[VenueAnnotationView defaultAnnotationIdentifier]];
+        }
+        
+        venueAnnotationView.venue = annotation;
+        
+        annotationViewToReturn = venueAnnotationView;
+    }
+    else if (annotation == self.mapView.userLocation)
+    {
+        UserLocationAnnotationView *userLocationAnnotationView = (UserLocationAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:[UserLocationAnnotationView defaultAnnotationIdentifier]];
+        
+        if (!userLocationAnnotationView) {
+            userLocationAnnotationView = [[UserLocationAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:[UserLocationAnnotationView defaultAnnotationIdentifier]];
+        }
+        
+        annotationViewToReturn = userLocationAnnotationView;
+    }
+    
+    return annotationViewToReturn;
 }
 
 #pragma mark - Properties
@@ -233,7 +276,7 @@
 }
 
 + (BOOL)shouldStopAfterFirstReverseGeocoding{
-    return NO;//TODO: debug. This must be commented because the project is designed to stop after the first fetch for the project
+//    return NO;//TODO: debug. This must be commented because the project is designed to stop after the first fetch for the project
     return YES;
 }
 

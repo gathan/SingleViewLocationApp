@@ -141,4 +141,29 @@
     return descriptionMutableString;
 }
 
+#pragma mark - MKAnnotation
+
+- (NSString*)title{
+    return self.name;
+}
+
+- (NSString*)subtitle{
+    return self.address;
+}
+
+- (CLLocationCoordinate2D)coordinate{
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longtitude.doubleValue);
+    return coordinate;
+}
+
+#pragma mark - KVO Compliancy
+
+- (void)willChangeValueForKey:(NSString *)key{
+    [super willChangeValueForKey:key];
+}
+
+- (void)didChangeValueForKey:(NSString *)key{
+    [super didChangeValueForKey:key];
+}
+
 @end

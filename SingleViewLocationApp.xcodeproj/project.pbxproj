@@ -43,6 +43,9 @@
 		2B5E80DB1AF3CC8F0060797A /* GraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80DA1AF3CC8F0060797A /* GraphicsProxy.m */; };
 		2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80DE1AF3CCC60060797A /* ProjectGraphicsProxy.m */; };
 		2B5E80E31AF3D8E70060797A /* UIView+GraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */; };
+		2BFC39D61AF3F12400B42369 /* VenueAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */; };
+		2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D91AF3F1AB00B42369 /* ProjectAnnotationView.m */; };
+		2BFC3A071AF3FF0200B42369 /* UserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC3A061AF3FF0200B42369 /* UserLocationAnnotationView.m */; };
 		2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B911AF1792700E331AE /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BFE8B951AF1792700E331AE /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B931AF1792700E331AE /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B971AF1794900E331AE /* FourSquareDataSource.m */; };
@@ -120,6 +123,12 @@
 		2B5E80DE1AF3CCC60060797A /* ProjectGraphicsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectGraphicsProxy.m; sourceTree = "<group>"; };
 		2B5E80E11AF3D8E70060797A /* UIView+GraphicsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GraphicsProxy.h"; sourceTree = "<group>"; };
 		2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GraphicsProxy.m"; sourceTree = "<group>"; };
+		2BFC39D41AF3F12400B42369 /* VenueAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueAnnotationView.h; sourceTree = "<group>"; };
+		2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueAnnotationView.m; sourceTree = "<group>"; };
+		2BFC39D81AF3F1AB00B42369 /* ProjectAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectAnnotationView.h; sourceTree = "<group>"; };
+		2BFC39D91AF3F1AB00B42369 /* ProjectAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectAnnotationView.m; sourceTree = "<group>"; };
+		2BFC3A051AF3FF0200B42369 /* UserLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocationAnnotationView.h; sourceTree = "<group>"; };
+		2BFC3A061AF3FF0200B42369 /* UserLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLocationAnnotationView.m; sourceTree = "<group>"; };
 		2BFE8B901AF1792700E331AE /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
 		2BFE8B911AF1792700E331AE /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
 		2BFE8B921AF1792700E331AE /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
@@ -240,6 +249,7 @@
 				2B545CB11AF0256F00C4B864 /* ProjectNavigationController */,
 				2B545CB01AF0256F00C4B864 /* ProjectLocationManager */,
 				2B545CF61AF033D700C4B864 /* ProjectGoogleMapsManager */,
+				2BFC39D71AF3F15D00B42369 /* ProjectAnnotationView */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -351,6 +361,10 @@
 				2B545CD71AF0275200C4B864 /* AllVenuesMapViewController.h */,
 				2B545CD81AF0275200C4B864 /* AllVenuesMapViewController.m */,
 				2B545CD91AF0275200C4B864 /* AllVenuesMapViewController.xib */,
+				2BFC39D41AF3F12400B42369 /* VenueAnnotationView.h */,
+				2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */,
+				2BFC3A051AF3FF0200B42369 /* UserLocationAnnotationView.h */,
+				2BFC3A061AF3FF0200B42369 /* UserLocationAnnotationView.m */,
 			);
 			path = AllVenuesMapViewController;
 			sourceTree = "<group>";
@@ -437,6 +451,15 @@
 				2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		2BFC39D71AF3F15D00B42369 /* ProjectAnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				2BFC39D81AF3F1AB00B42369 /* ProjectAnnotationView.h */,
+				2BFC39D91AF3F1AB00B42369 /* ProjectAnnotationView.m */,
+			);
+			path = ProjectAnnotationView;
 			sourceTree = "<group>";
 		};
 		2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */ = {
@@ -584,6 +607,7 @@
 				2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */,
 				2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */,
 				2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */,
+				2BFC3A071AF3FF0200B42369 /* UserLocationAnnotationView.m in Sources */,
 				2B545C851AF0243C00C4B864 /* AppDelegate.m in Sources */,
 				2BFE8B951AF1792700E331AE /* BZFoursquareRequest.m in Sources */,
 				2B545CD51AF026F500C4B864 /* UIApplication+ProjectAdditions.m in Sources */,
@@ -596,6 +620,7 @@
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
 				2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
+				2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
 				2BFE8BA41AF1794900E331AE /* Venue.m in Sources */,
 				2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */,
@@ -604,6 +629,7 @@
 				2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */,
 				2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */,
 				2B545D011AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager.m in Sources */,
+				2BFC39D61AF3F12400B42369 /* VenueAnnotationView.m in Sources */,
 				2B5E80DB1AF3CC8F0060797A /* GraphicsProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

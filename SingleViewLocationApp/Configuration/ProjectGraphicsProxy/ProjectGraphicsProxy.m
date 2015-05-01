@@ -34,4 +34,35 @@
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
 }
 
++ (UIImage*)homeIconImage{
+    UIImage *homeIconImage = [UIImage imageNamed:@"ico-home"];
+    return homeIconImage;
+}
+
++ (UIImage*)myLocationPinImage{
+    UIImage *myLocationPinImage = [UIImage imageNamed:@"ico-mylocation-pin"];
+    return myLocationPinImage;
+}
+
++ (UIImage*)myLocationImage{
+    UIImage *myLocationImage = [UIImage imageNamed:@"ico-mylocation"];
+    return myLocationImage;
+}
+
++ (UIImage*)venueSelectedImage{
+    UIImage *venueSelectedImage = [UIImage imageNamed:@"ico-venue-selected"];
+    return venueSelectedImage;
+}
+
++ (UIImage*)venueImage{
+    UIImage *venueImage = [UIImage imageNamed:@"ico-venue"];
+    return venueImage;
+}
+
++ (UIImage*)logo{
+    UIImage *logo = [UIImage imageNamed:@"Logo"];
+    return logo;
+}
+
+
 @end
