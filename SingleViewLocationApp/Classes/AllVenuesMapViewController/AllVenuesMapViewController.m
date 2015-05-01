@@ -21,6 +21,27 @@
 
 @property (nonatomic, strong) NSMutableArray *venuesMutableArray;
 
+
+//note: using pragma marks so much like this helps when someone other will use this class. On top file inspector for the current file, press the button on the right of the current file. All sections of pragma marks will be sorted. also pragma marking a delegate, will take you to the actual delegate with CMD+click
+#pragma mark - IBOutlets
+
+//TODO: give the right colors to the views.
+#pragma mark -- Map
+@property (weak, nonatomic) IBOutlet GMSMapView *gmsMapView;
+
+#pragma mark -- Current location View
+@property (weak, nonatomic) IBOutlet UIView *currentLocationView;
+
+#pragma mark -- Current location Title View
+@property (weak, nonatomic) IBOutlet UIView *currentLocationTitleView;
+@property (weak, nonatomic) IBOutlet UILabel *currentLocationTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *currentLocationImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint;
+
+#pragma mark -- Current Address View
+@property (weak, nonatomic) IBOutlet UIView *addressView;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
 @end
 
 @implementation AllVenuesMapViewController
