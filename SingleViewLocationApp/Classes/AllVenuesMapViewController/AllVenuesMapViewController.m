@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *gmsMapView;
 
 #pragma mark -- Current location View
+@property (nonatomic, getter = isCurrentLocationViewHidden) BOOL currentLocationViewHidden;
 @property (weak, nonatomic) IBOutlet UIView *currentLocationView;
 
 #pragma mark -- Current location Title View
@@ -41,6 +42,8 @@
 #pragma mark -- Current Address View
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
++ (BOOL)shouldStopAfterFirstReverseGeocoding;
 
 @end
 
@@ -56,13 +59,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    BOOL hasFoundAddress = self.latestGMSAddress != nil;
+    [self makeCurrentLocationViewHidden:!hasFoundAddress animated:NO];
+    
     [self.locationManager addDelegate:self];
     [self.locationManager userExplicitlyRequestedLocationAccess];//This is the best time to ask for user's will to give location data to us. It could be when user tapped a button if there was one to activate location (Apple documentation says:   locationServicesEnabled...You may want to check this property and use location services only when explicitly requested by the user.)
     self.venueDataSource.delegate = self;
 }
 
 - (void)updateUI{
-    //todo: update ui for new address for example
+    self.addressLabel.text = self.latestGMSAddress.thoroughfare;
 }
 
 #pragma mark - Actions
@@ -76,9 +82,6 @@
 
 - (void)googleMapsProjectGeocoder:(GoogleMapsProjectGeocoder *)googleMapsProjectGeocoder successfullyReverseGeocodedGMSAddress:(GMSAddress *)gmsAddress{
     self.latestGMSAddress = gmsAddress;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self updateUI];
-    });
 }
 
 - (void)googleMapsProjectGeocoder:(GoogleMapsProjectGeocoder *)googleMapsProjectGeocoder didFailReverseGeocodingGMSAddressWithError:(NSError *)error{
@@ -117,13 +120,53 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocation *veryFirstLocation = [locations firstObject];
     if (veryFirstLocation) {
-        [self.locationManager removeDelegate:self];
+        if ([AllVenuesMapViewController shouldStopAfterFirstReverseGeocoding]) {
+            [self.locationManager removeDelegate:self];
+        }
         [self reverseGeocodeLocation:veryFirstLocation];
         [self.venueDataSource fetchVenuesForLocationCoordinate:veryFirstLocation.coordinate];
     }
 }
 
 #pragma mark - Properties
+
+- (void)setLatestGMSAddress:(GMSAddress *)latestGMSAddress{
+    _latestGMSAddress = latestGMSAddress;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateUI];
+    });
+    
+    if (_latestGMSAddress) {
+        [self makeCurrentLocationViewHidden:NO animated:YES];
+    }else{
+        [self makeCurrentLocationViewHidden:YES animated:YES];
+    }
+}
+
+- (void)makeCurrentLocationViewHidden:(BOOL)hidden animated:(BOOL)animated{
+    self.currentLocationViewHidden = hidden;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat resultAlpha;
+        if (_currentLocationViewHidden) {
+            self.currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint.constant = -self.currentLocationView.bounds.size.height;
+            resultAlpha = 0.0f;
+        }else{
+            self.currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint.constant = 0;
+            resultAlpha = 1.0f;
+        }
+        if (animated){
+            [UIView animateWithDuration:[self animationTime] animations:^{
+                self.currentLocationView.alpha = resultAlpha;
+                [self.view layoutIfNeeded];
+            }];
+        }else{
+            self.currentLocationView.alpha = resultAlpha;
+            [self.view layoutIfNeeded];
+        }
+    });
+}
 
 - (GoogleMapsProjectGeocoder*)geocoder{
     if (!_geocoder) {
@@ -187,6 +230,11 @@
 + (instancetype)defaultAllVenuesMapViewController{
     AllVenuesMapViewController *allVenuesMapViewController = [[AllVenuesMapViewController alloc]initWithNibName:@"AllVenuesMapViewController" bundle:nil];
     return allVenuesMapViewController;
+}
+
++ (BOOL)shouldStopAfterFirstReverseGeocoding{
+    return NO;//TODO: debug. This must be commented because the project is designed to stop after the first fetch for the project
+    return YES;
 }
 
 @end

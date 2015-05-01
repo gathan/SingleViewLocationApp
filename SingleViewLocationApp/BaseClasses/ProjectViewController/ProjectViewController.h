@@ -12,4 +12,6 @@
 
 @interface ProjectViewController : UIViewController <GraphicsProtocol>
 
+- (CGFloat)animationTime;
+
 @end

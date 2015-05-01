@@ -12,7 +12,7 @@
                 <outlet property="currentLocationTitleLabel" destination="Gyx-nx-Gmy" id="nue-jC-ODb"/>
                 <outlet property="currentLocationTitleView" destination="FeI-Hq-sO5" id="eqi-sU-Lv6"/>
                 <outlet property="currentLocationView" destination="pA3-yP-Wq8" id="SJh-iP-1Dy"/>
-                <outlet property="currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint" destination="Hpa-86-Qy2" id="U7S-OO-Pgq"/>
+                <outlet property="currentLocationViewVerticalSpaceBottomToContainerLayoutConstraint" destination="Mhv-ap-RfN" id="RgI-Pe-9Ul"/>
                 <outlet property="gmsMapView" destination="qSs-dc-an7" id="OqH-qT-EW0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

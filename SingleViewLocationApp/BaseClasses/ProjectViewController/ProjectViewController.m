@@ -98,4 +98,8 @@
     return [[ProjectGraphicsProxy sharedProxy] statusBarStyle];
 }
 
+- (CGFloat)animationTime{
+    return 0.3;
+}
+
 @end
