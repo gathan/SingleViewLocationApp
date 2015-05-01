@@ -24,6 +24,10 @@
 
 @property (nonatomic, strong) NSMutableArray *venuesMutableArray;
 
+@property (nonatomic, strong) UIImageView *navigationItemCustomImageView;
+
+@property (nonatomic, strong) UIBarButtonItem *homeBarButtonItem;
+@property (nonatomic, strong) UIBarButtonItem *closeBarButtonItem;
 
 //note: using pragma marks so much like this helps when someone other will use this class. On top file inspector for the current file, press the button on the right of the current file. All sections of pragma marks will be sorted. also pragma marking a delegate, will take you to the actual delegate with CMD+click
 #pragma mark - IBOutlets
@@ -57,6 +61,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = self.homeBarButtonItem;
+    
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading];
     
 
@@ -67,6 +73,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    self.navigationController.navigationItem.titleView = self.navigationItemCustomImageView;
     
     BOOL hasFoundAddress = self.latestGMSAddress != nil;
     [self makeCurrentLocationViewHidden:!hasFoundAddress animated:NO];
@@ -81,6 +89,17 @@
 - (void)reverseGeocodeLocation:(CLLocation*)location{
 
     [self.geocoder startReverseGeocodingGMSAddressForCLLocationCoordinate:location.coordinate];
+}
+
+- (void)homeAction{
+    if (self.locationManager.location) {
+        MKCoordinateRegion region = MKCoordinateRegionMake(self.locationManager.location.coordinate, MKCoordinateSpanMake(0.001, 0.001));
+        [self.mapView setRegion:region animated:YES];
+    }
+}
+
+- (void)closeAction{
+    
 }
 
 #pragma mark - Delegates
@@ -231,6 +250,30 @@
         _venueDataSource = [[VenueDataSource alloc]init];
     }
     return _venueDataSource;
+}
+
+- (UIImageView*)navigationItemCustomImageView{
+    if (!_navigationItemCustomImageView){
+        UIImage *logoImage = [ProjectGraphicsProxy logo];
+        _navigationItemCustomImageView = [[UIImageView alloc]initWithImage:logoImage];
+    }
+    return _navigationItemCustomImageView;
+}
+
+- (UIBarButtonItem*)homeBarButtonItem{
+    if (!_homeBarButtonItem) {
+        UIImage *homeImage = [ProjectGraphicsProxy homeIconImage];
+        _homeBarButtonItem = [[UIBarButtonItem alloc]initWithImage:homeImage style:UIBarButtonItemStylePlain target:self action:@selector(homeAction)];
+    }
+    return _homeBarButtonItem;
+}
+
+- (UIBarButtonItem*)closeBarButtonItem{
+    if (!_closeBarButtonItem) {
+        UIImage *closeImage = [ProjectGraphicsProxy closeIconImage];
+        _homeBarButtonItem = [[UIBarButtonItem alloc]initWithImage:closeImage style:UIBarButtonItemStylePlain target:self action:@selector(closeAction)];
+    }
+    return _homeBarButtonItem;
 }
 
 #pragma mark - GraphicsProtocol

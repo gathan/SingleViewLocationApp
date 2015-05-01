@@ -56,6 +56,8 @@
         [self.navigationController.navigationBar setTranslucent:[[ProjectGraphicsProxy sharedProxy] translucentNavigationBar]];
     }
     
+    self.navigationController.navigationBar.tintColor = [[ProjectGraphicsProxy sharedProxy] lightGrayTransparentColor];
+    
     [self giveGraphicsAndColorOutlets];
 }
 

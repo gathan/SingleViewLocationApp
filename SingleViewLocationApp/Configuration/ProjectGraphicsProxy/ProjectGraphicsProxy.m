@@ -34,6 +34,11 @@
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
 }
 
++ (UIImage*)closeIconImage{
+    UIImage *closeIconImage = [UIImage imageNamed:@"ico-close"];
+    return closeIconImage;
+}
+
 + (UIImage*)homeIconImage{
     UIImage *homeIconImage = [UIImage imageNamed:@"ico-home"];
     return homeIconImage;

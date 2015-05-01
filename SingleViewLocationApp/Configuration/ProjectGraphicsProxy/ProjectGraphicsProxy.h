@@ -30,6 +30,7 @@
 
 @property (nonatomic, strong) UIColor *lightGrayTransparentColor;
 
++ (UIImage*)closeIconImage;
 + (UIImage*)homeIconImage;
 + (UIImage*)myLocationPinImage;
 + (UIImage*)myLocationImage;
