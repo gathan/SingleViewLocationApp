@@ -50,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -144,6 +145,41 @@
         _venueDataSource = [[VenueDataSource alloc]init];
     }
     return _venueDataSource;
+}
+
+#pragma mark - GraphicsProtocol
+
+- (void)updateTheme{
+    [super updateTheme];
+}
+
+- (void)giveGraphicsAndColorOutlets{
+    [super giveGraphicsAndColorOutlets];
+    
+    self.currentLocationView.backgroundColor = [UIColor clearColor];
+    
+    self.currentLocationTitleView.backgroundColor = [[ProjectGraphicsProxy sharedProxy] lightGrayTransparentColor];
+    self.addressView.backgroundColor = [[ProjectGraphicsProxy sharedProxy] candyStoreThemeRedToBrownColor];
+}
+
+- (NSArray*)titleInvertedLabels{
+    return @[self.addressLabel];
+}
+
+- (NSArray*)titleLabels{
+    return @[self.currentLocationTitleLabel];
+}
+
+- (UIColor*)viewControllerBackgroundColor{
+    return [[ProjectGraphicsProxy sharedProxy] candyStoreThemeDarkGreenColor];
+}
+
+- (UIColor*)navigationControllerBackgroundColor{
+    return [self viewControllerBackgroundColor];
+}
+
+- (UIColor*)navigationBarBackgroundColor{
+    return [[ProjectGraphicsProxy sharedProxy] candyStoreThemeDarkGreenTransparentColor];
 }
 
 #pragma mark - Class Methods

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphicsProxy.h"
+#import "ProjectGraphicsProxy.h"
 
-@interface ProjectViewController : UIViewController
+@interface ProjectViewController : UIViewController <GraphicsProtocol>
 
 @end

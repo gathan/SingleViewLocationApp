@@ -39,6 +39,10 @@
 		2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */; };
 		2B545D0E1AF042BF00C4B864 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B545D0D1AF042BF00C4B864 /* GoogleMaps.framework */; };
 		2B545D101AF042E400C4B864 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B545D0F1AF042E400C4B864 /* GoogleMaps.bundle */; };
+		2B5E80D71AF3CAFD0060797A /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B5E80D61AF3CAFD0060797A /* Colors.plist */; };
+		2B5E80DB1AF3CC8F0060797A /* GraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80DA1AF3CC8F0060797A /* GraphicsProxy.m */; };
+		2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80DE1AF3CCC60060797A /* ProjectGraphicsProxy.m */; };
+		2B5E80E31AF3D8E70060797A /* UIView+GraphicsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */; };
 		2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B911AF1792700E331AE /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BFE8B951AF1792700E331AE /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B931AF1792700E331AE /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE8B971AF1794900E331AE /* FourSquareDataSource.m */; };
@@ -109,6 +113,13 @@
 		2B545D0A1AF03EA000C4B864 /* NSObject+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ProjectAdditions.m"; sourceTree = "<group>"; };
 		2B545D0D1AF042BF00C4B864 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		2B545D0F1AF042E400C4B864 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2B5E80D61AF3CAFD0060797A /* Colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
+		2B5E80D91AF3CC8F0060797A /* GraphicsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsProxy.h; sourceTree = "<group>"; };
+		2B5E80DA1AF3CC8F0060797A /* GraphicsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsProxy.m; sourceTree = "<group>"; };
+		2B5E80DD1AF3CCC60060797A /* ProjectGraphicsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectGraphicsProxy.h; sourceTree = "<group>"; };
+		2B5E80DE1AF3CCC60060797A /* ProjectGraphicsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectGraphicsProxy.m; sourceTree = "<group>"; };
+		2B5E80E11AF3D8E70060797A /* UIView+GraphicsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GraphicsProxy.h"; sourceTree = "<group>"; };
+		2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GraphicsProxy.m"; sourceTree = "<group>"; };
 		2BFE8B901AF1792700E331AE /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
 		2BFE8B911AF1792700E331AE /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
 		2BFE8B921AF1792700E331AE /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
@@ -224,6 +235,7 @@
 		2B545CA51AF024FD00C4B864 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				2B5E80D81AF3CC8F0060797A /* GraphicsProxy */,
 				2B545CB41AF0256F00C4B864 /* ProjectViewController */,
 				2B545CB11AF0256F00C4B864 /* ProjectNavigationController */,
 				2B545CB01AF0256F00C4B864 /* ProjectLocationManager */,
@@ -239,6 +251,7 @@
 				2B545CD21AF026E800C4B864 /* UIApplication */,
 				2B545CC71AF026C200C4B864 /* NSString */,
 				2B545CCA1AF026C200C4B864 /* UIViewController */,
+				2B5E80E01AF3D8C80060797A /* UIView */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -254,6 +267,8 @@
 		2B545CA81AF024FD00C4B864 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				2B5E80D61AF3CAFD0060797A /* Colors.plist */,
+				2B5E80DC1AF3CCB70060797A /* ProjectGraphicsProxy */,
 				2B545CFE1AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager */,
 			);
 			path = Configuration;
@@ -397,6 +412,33 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		2B5E80D81AF3CC8F0060797A /* GraphicsProxy */ = {
+			isa = PBXGroup;
+			children = (
+				2B5E80D91AF3CC8F0060797A /* GraphicsProxy.h */,
+				2B5E80DA1AF3CC8F0060797A /* GraphicsProxy.m */,
+			);
+			path = GraphicsProxy;
+			sourceTree = "<group>";
+		};
+		2B5E80DC1AF3CCB70060797A /* ProjectGraphicsProxy */ = {
+			isa = PBXGroup;
+			children = (
+				2B5E80DD1AF3CCC60060797A /* ProjectGraphicsProxy.h */,
+				2B5E80DE1AF3CCC60060797A /* ProjectGraphicsProxy.m */,
+			);
+			path = ProjectGraphicsProxy;
+			sourceTree = "<group>";
+		};
+		2B5E80E01AF3D8C80060797A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				2B5E80E11AF3D8E70060797A /* UIView+GraphicsProxy.h */,
+				2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5E80D71AF3CAFD0060797A /* Colors.plist in Resources */,
 				2B545C901AF0243C00C4B864 /* LaunchScreen.xib in Resources */,
 				2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */,
 				2BFE8BA91AF19BB500E331AE /* Akadimias20.gpx in Resources */,
@@ -546,10 +589,12 @@
 				2B545CD51AF026F500C4B864 /* UIApplication+ProjectAdditions.m in Sources */,
 				2B545CDA1AF0275200C4B864 /* AllVenuesMapViewController.m in Sources */,
 				2B545CB71AF0256F00C4B864 /* ProjectNavigationController.m in Sources */,
+				2B5E80E31AF3D8E70060797A /* UIView+GraphicsProxy.m in Sources */,
 				2BFE8BA21AF1794900E331AE /* FourSquareObject.m in Sources */,
 				2B545D051AF035E300C4B864 /* GoogleMapsProjectGeocoder.m in Sources */,
 				2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */,
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
+				2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
 				2BFE8BA41AF1794900E331AE /* Venue.m in Sources */,
@@ -559,6 +604,7 @@
 				2B545CD11AF026CE00C4B864 /* NSString+Translations.m in Sources */,
 				2BFE8B941AF1792700E331AE /* BZFoursquare.m in Sources */,
 				2B545D011AF034AE00C4B864 /* SingleViewLocationAppGoogleMapsManager.m in Sources */,
+				2B5E80DB1AF3CC8F0060797A /* GraphicsProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

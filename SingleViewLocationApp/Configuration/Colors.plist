@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DefaultFlavorIdentifier</key>
+	<dict>
+		<key>titleLabelInvertedColor</key>
+		<string>255|255|255</string>
+		<key>defaultLabelInvertedColor</key>
+		<string>255|255|255</string>
+		<key>candyStoreThemeLightGreenColor</key>
+		<string>91|198|155</string>
+		<key>candyStoreThemeDarkGreenColor</key>
+		<string>44|121|91</string>
+		<key>candyStoreThemeDarkGreenTransparentColor</key>
+		<string>44|121|91|90</string>
+		<key>candyStoreThemeGreenToCyanColor</key>
+		<string>143|255|210</string>
+		<key>candyStoreThemeRedToBrownColor</key>
+		<string>121|46|31</string>
+		<key>candyStoreThemeCoralColor</key>
+		<string>198|115|99</string>
+		<key>lightGrayTransparentColor</key>
+		<string>223|219|212|90</string>
+	</dict>
+</dict>
+</plist>
