@@ -30,6 +30,7 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" verticalHuggingPriority="100" verticalCompressionResistancePriority="900" translatesAutoresizingMaskIntoConstraints="NO" id="pA3-yP-Wq8" userLabel="Current Location View">
+                    <rect key="frame" x="0.0" y="499" width="600" height="101"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeI-Hq-sO5" userLabel="Current Location Title View">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
@@ -89,7 +90,7 @@
                         <constraint firstItem="FeI-Hq-sO5" firstAttribute="top" secondItem="pA3-yP-Wq8" secondAttribute="top" id="PTb-mT-dv7"/>
                         <constraint firstItem="sNQ-d5-yBL" firstAttribute="leading" secondItem="pA3-yP-Wq8" secondAttribute="leading" id="SPo-VM-xhb"/>
                         <constraint firstItem="sNQ-d5-yBL" firstAttribute="width" secondItem="FeI-Hq-sO5" secondAttribute="width" id="dT7-kg-em0"/>
-                        <constraint firstAttribute="bottom" secondItem="sNQ-d5-yBL" secondAttribute="bottom" constant="-101" id="eCG-Dj-CeW"/>
+                        <constraint firstAttribute="bottom" secondItem="sNQ-d5-yBL" secondAttribute="bottom" id="eCG-Dj-CeW"/>
                     </constraints>
                 </view>
             </subviews>
