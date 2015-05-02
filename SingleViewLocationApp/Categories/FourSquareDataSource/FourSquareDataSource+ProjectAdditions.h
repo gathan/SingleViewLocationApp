@@ -20,4 +20,7 @@
                                   ofHeightSize:(CGFloat)height
                                orOriginalPhoto:(BOOL)originalPhoto;
 
++ (NSString*)urlStringForFourSquarePhotoOf100x100SizeWithPrefix:(NSString*)prefix
+                                                      andSuffix:(NSString*)suffix;
+
 @end

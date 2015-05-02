@@ -11,10 +11,13 @@
 #import "NSObject+ProjectAdditions.h"
 #import "VenuePhotosDataSource.h"
 #import "VenuePhoto.h"
+#import "UIImageView+WebCache.h"
+#import "FourSquareDataSource+ProjectAdditions.h"
 
 @interface VenueMiniInfoViewController () <FourSquareDelegate>
 
 @property (nonatomic, strong) VenuePhotosDataSource *venuePhotosDataSource;
+@property (nonatomic, strong) VenuePhoto *firstVenuePhoto;
 
 #pragma mark - IBOutlets
 
@@ -59,7 +62,12 @@
 }
 
 - (void)updateVenuePhoto{
-
+    NSString *venuePhotoImageURLString = [FourSquareDataSource urlStringForFourSquarePhotoOf100x100SizeWithPrefix:self.firstVenuePhoto.prefix
+                                                                                                        andSuffix:self.firstVenuePhoto.suffix];
+    NSURL *urlToSet = [NSURL URLWithString:venuePhotoImageURLString];
+    UIImage *placeholderLogoImage = [ProjectGraphicsProxy logo];
+    [self.venuePhotoImageView sd_setImageWithURL:urlToSet
+                                placeholderImage:placeholderLogoImage];
 }
 
 #pragma mark - Delegates
@@ -77,6 +85,8 @@
     [super updateThemeViewsGeometry];
     [self.ratingEclipseView convertToCircle];
     [self.ratingEclipseContentView convertToCircle];
+    
+    self.venuePhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)giveGraphicsAndColorOutlets{
@@ -109,6 +119,7 @@
 
 - (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource successfullyFetchedFourSquareObjects:(NSArray*)foursquareObjectsArray
 {
+    self.firstVenuePhoto = [foursquareObjectsArray firstObject];
     [self updateVenuePhoto];
 }
 
@@ -133,7 +144,9 @@
     _venue = venue;
     [self updateUI];
     if (differentVenue) {
-        self.venuePhotoImageView.image = nil;
+        self.venuePhotosDataSource = nil;
+        UIImage *placeholderLogoImage = [ProjectGraphicsProxy logo];
+        self.venuePhotoImageView.image = placeholderLogoImage;
         
         [self fetchVenuePhotos];
     }

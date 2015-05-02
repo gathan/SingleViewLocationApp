@@ -1,3 +1,6 @@
 [submodule "Submodules/foursquare-ios-api"]
 	path = Submodules/foursquare-ios-api
 	url = https://github.com/baztokyo/foursquare-ios-api.git
+[submodule "Submodules/SDWebImage"]
+	path = Submodules/SDWebImage
+	url = https://github.com/rs/SDWebImage.git

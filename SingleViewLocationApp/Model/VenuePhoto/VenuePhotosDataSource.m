@@ -45,8 +45,8 @@
 
 + (NSString*)urlForVenuePhotoSearchForVenue:(Venue*)venue{
     NSString *urlForVenues = [VenuePhotosDataSource urlForVenues];
-//    NSString *pathComponent = [NSString stringWithFormat:@"/%@/photos", venue.codeId];
-    NSString *pathComponent = [NSString stringWithFormat:@"/%@/photos", @"43a52546f964a520532c1fe3"];
+    NSString *pathComponent = [NSString stringWithFormat:@"/%@/photos", venue.codeId];
+//    NSString *pathComponent = [NSString stringWithFormat:@"/%@/photos", @"43a52546f964a520532c1fe3"];//JFL venue id, for testing
     NSString *urlForVenuePhotoSearch = [urlForVenues stringByAppendingPathComponent:pathComponent];
     return urlForVenuePhotoSearch;
 }

@@ -8,6 +8,7 @@
 
 #import "FourSquareDataSource+ProjectAdditions.h"
 #import <UIKit/UIKit.h>
+#import "NSObject+ProjectAdditions.h"
 
 @implementation FourSquareDataSource (ProjectAdditions)
 
@@ -20,55 +21,68 @@
                                   ofHeightSize:(CGFloat)height
                                orOriginalPhoto:(BOOL)originalPhoto
 {
-    NSMutableString *finalUrl = [[NSMutableString alloc]initWithString:prefix];
-    BOOL thereWasAProblemUsingTheFunction = NO;
-    if (originalPhoto) {
-        [finalUrl appendString:@"/"];
-        [finalUrl appendString:@"original"];
-    }
-    else
+    
+    NSMutableString *finalUrl;
+    if ([prefix isStringAndNotEmpty] &&
+        [suffix isStringAndNotEmpty])
     {
-        if (withCustomWidth &&
-            withCustomHeight)
-        {
-            [finalUrl appendString:@"/"];
-            [finalUrl appendFormat:@"%f", width];
-            [finalUrl appendString:@"x"];
-            [finalUrl appendFormat:@"%f", height];
-            
-            thereWasAProblemUsingTheFunction = !([FourSquareDataSource availablePhotoWidthOfHeight:width] &&
-            [FourSquareDataSource availablePhotoWidthOfHeight:height]);
+        finalUrl = [[NSMutableString alloc]initWithString:prefix];
+        BOOL thereWasAProblemUsingTheFunction = NO;
+        if (originalPhoto) {
+            [finalUrl appendString:@"original"];
         }
         else
         {
-            if (withCustomWidth)
+            if (withCustomWidth &&
+                withCustomHeight)
             {
-                [finalUrl appendString:@"/"];
-                [finalUrl appendString:@"width"];
-                [finalUrl appendFormat:@"%f", width];
+                [finalUrl appendFormat:@"%.0f", width];
+                [finalUrl appendString:@"x"];
+                [finalUrl appendFormat:@"%.0f", height];
                 
-                thereWasAProblemUsingTheFunction = ![FourSquareDataSource availablePhotoWidthOfHeight:width];
+                thereWasAProblemUsingTheFunction = !([FourSquareDataSource availablePhotoWidthOfHeight:width] &&
+                                                     [FourSquareDataSource availablePhotoWidthOfHeight:height]);
             }
-            else if (withCustomHeight)
+            else
             {
-                [finalUrl appendString:@"/"];
-                [finalUrl appendString:@"height"];
-                [finalUrl appendFormat:@"%f", height];
-
-                thereWasAProblemUsingTheFunction = ![FourSquareDataSource availablePhotoWidthOfHeight:height];
+                if (withCustomWidth)
+                {
+                    [finalUrl appendString:@"width"];
+                    [finalUrl appendFormat:@"%.0f", width];
+                    
+                    thereWasAProblemUsingTheFunction = ![FourSquareDataSource availablePhotoWidthOfHeight:width];
+                }
+                else if (withCustomHeight)
+                {
+                    [finalUrl appendString:@"height"];
+                    [finalUrl appendFormat:@"%.0f", height];
+                    
+                    thereWasAProblemUsingTheFunction = ![FourSquareDataSource availablePhotoWidthOfHeight:height];
+                }
             }
+        }
+        
+        if (thereWasAProblemUsingTheFunction)
+        {
+            finalUrl = [NSMutableString stringWithString:[FourSquareDataSource urlStringForFourSquarePhotoPrefix:prefix andSuffix:suffix withCustomWidth:NO ofWidthSize:0 withCustomHeight:NO ofHeightSize:0 orOriginalPhoto:YES]];
+        }else{
+            [finalUrl appendString:suffix];
         }
     }
     
-    if (thereWasAProblemUsingTheFunction)
-    {
-        finalUrl = [NSMutableString stringWithString:[FourSquareDataSource urlStringForFourSquarePhotoPrefix:prefix andSuffix:suffix withCustomWidth:NO ofWidthSize:0 withCustomHeight:NO ofHeightSize:0 orOriginalPhoto:YES]];
-    }else{
-        [finalUrl appendString:@"/"];
-        [finalUrl appendString:suffix];
-    }
-    
     return finalUrl;
+}
+
++ (NSString*)urlStringForFourSquarePhotoOf100x100SizeWithPrefix:(NSString*)prefix
+                                                      andSuffix:(NSString*)suffix
+{
+    return [FourSquareDataSource urlStringForFourSquarePhotoPrefix:prefix
+                                                         andSuffix:suffix
+                                                   withCustomWidth:YES
+                                                       ofWidthSize:100
+                                                  withCustomHeight:YES
+                                                      ofHeightSize:100
+                                                   orOriginalPhoto:NO];
 }
 
 + (BOOL)availablePhotoWidthOfHeight:(CGFloat)widthOrHeight{
