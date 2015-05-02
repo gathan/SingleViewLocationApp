@@ -13,6 +13,7 @@
 #import "VenuePhoto.h"
 #import "UIImageView+WebCache.h"
 #import "FourSquareDataSource+ProjectAdditions.h"
+#import "UIView+ProjectAnimations.h"
 
 @interface VenueMiniInfoViewController () <FourSquareDelegate>
 
@@ -85,6 +86,8 @@
     [super updateThemeViewsGeometry];
     [self.ratingEclipseView convertToCircle];
     [self.ratingEclipseContentView convertToCircle];
+    
+    [self.ratingEclipseView startAnimatingLikeGameCenterBalloonsFloating];
     
     self.venuePhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
 }

@@ -15,6 +15,7 @@
 #import "VenueAnnotationView.h"
 #import "UserLocationAnnotationView.h"
 #import "VenueMiniInfoViewController.h"
+#import "UIView+ProjectAnimations.h"
 
 @interface AllVenuesMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, GoogleMapsProjectGeocoderDelegate, FourSquareDelegate>
 
@@ -203,7 +204,7 @@
         
         annotationViewToReturn = userLocationAnnotationView;
     }
-    
+        
     return annotationViewToReturn;
 }
 
@@ -351,6 +352,7 @@
         _venueMiniInfoViewController.view.frame = self.venueMiniInfoViewContainerView.bounds;
         [self addChildViewController:_venueMiniInfoViewController];
         [self.venueMiniInfoViewContainerView addSubview:_venueMiniInfoViewController.view];
+//        [_venueMiniInfoViewContainerView startAnimatingLikeGameCenterBalloonsFloating];
     }
     return _venueMiniInfoViewController;
 }
