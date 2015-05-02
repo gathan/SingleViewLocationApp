@@ -32,7 +32,6 @@
 //note: using pragma marks so much like this helps when someone other will use this class. On top file inspector for the current file, press the button on the right of the current file. All sections of pragma marks will be sorted. also pragma marking a delegate, will take you to the actual delegate with CMD+click
 #pragma mark - IBOutlets
 
-//TODO: give the right colors to the views.
 #pragma mark -- Map
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -289,6 +288,9 @@
     
     self.currentLocationTitleView.backgroundColor = [[ProjectGraphicsProxy sharedProxy] lightGrayTransparentColor];
     self.addressView.backgroundColor = [[ProjectGraphicsProxy sharedProxy] candyStoreThemeRedToBrownColor];
+    
+    UIImage *myLocationImage = [ProjectGraphicsProxy myLocationImage];
+    self.currentLocationImageView.image = myLocationImage;
 }
 
 - (NSArray*)titleInvertedLabels{
