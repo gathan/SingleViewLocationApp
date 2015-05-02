@@ -18,29 +18,63 @@
     }
 }
 
-- (void)markLabelAsTitle{
-    UIFont *font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+- (void)markLabelAsTitleThatIsBold:(BOOL)bold{
+    UIFont *font;
+    if (bold) {
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+    }else{
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+    }
+    
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
     label.textColor = [[ProjectGraphicsProxy sharedProxy] titleLabelColor];
 }
 
-- (void)markLabelAsTitleInverted{
-    UIFont *font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+- (void)markLabelAsTitleDifferentThatIsBold:(BOOL)bold{
+    UIFont *font;
+    if (bold) {
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+    }else{
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+    }
+    
+    [self applyFont:font];
+    UILabel *label = (UILabel*)self;
+    label.textColor = [[ProjectGraphicsProxy sharedProxy] titleDifferentLabelColor];
+}
+
+- (void)markLabelAsTitleInvertedThatIsBold:(BOOL)bold{
+    UIFont *font;
+    if (bold) {
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+    }else{
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+    }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
     label.textColor = [[ProjectGraphicsProxy sharedProxy] titleLabelInvertedColor];
 }
 
-- (void)markLabelAsBody{
-    UIFont *font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+- (void)markLabelAsBodyThatIsBold:(BOOL)bold{
+    UIFont *font;
+    if (bold) {
+        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:0];
+    }else{
+        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+    }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
     label.textColor = [[ProjectGraphicsProxy sharedProxy] defaultLabelColor];
 }
 
-- (void)markLabelAsBodyInverted{
-    UIFont *font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+- (void)markLabelAsBodyInvertedThatIsBold:(BOOL)bold{
+    UIFont *font;
+    if (bold) {
+        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:0];
+    }else{
+        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+    }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
     label.textColor = [[ProjectGraphicsProxy sharedProxy] defaultLabelInvertedColor];

@@ -14,6 +14,7 @@
 #import <MapKit/MapKit.h>
 #import "VenueAnnotationView.h"
 #import "UserLocationAnnotationView.h"
+#import "VenueMiniInfoViewController.h"
 
 @interface AllVenuesMapViewController () <CLLocationManagerDelegate, MKMapViewDelegate, GoogleMapsProjectGeocoderDelegate, FourSquareDelegate>
 
@@ -28,6 +29,8 @@
 
 @property (nonatomic, strong) UIBarButtonItem *homeBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *closeBarButtonItem;
+
+@property (nonatomic, strong) VenueMiniInfoViewController *venueMiniInfoViewController;
 
 //note: using pragma marks so much like this helps when someone other will use this class. On top file inspector for the current file, press the button on the right of the current file. All sections of pragma marks will be sorted. also pragma marking a delegate, will take you to the actual delegate with CMD+click
 #pragma mark - IBOutlets
@@ -49,6 +52,14 @@
 @property (weak, nonatomic) IBOutlet UIView *addressView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
+#pragma mark -- VenueMiniInfoView
+
+@property (nonatomic, getter = isVenueMiniInfoViewContainerViewHidden) BOOL venueMiniInfoViewContainerViewHidden;
+@property (weak, nonatomic) IBOutlet UIView *venueMiniInfoViewContainerView;
+
+
+#pragma mark - Class Methods
+
 + (BOOL)shouldStopAfterFirstReverseGeocoding;
 
 @end
@@ -62,6 +73,7 @@
     
     self.navigationItem.leftBarButtonItem = self.homeBarButtonItem;
     
+//    self.mapView.rotateEnabled = NO;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading];
     
 
@@ -83,6 +95,12 @@
     self.addressLabel.text = self.latestGMSAddress.thoroughfare;
 }
 
+
+- (void)updateTranslations{
+    [super updateTranslations];
+    self.currentLocationTitleLabel.text = [[@"Current Location" translate] uppercaseString];
+ }
+
 #pragma mark - Actions
 
 - (void)reverseGeocodeLocation:(CLLocation*)location{
@@ -98,7 +116,7 @@
 }
 
 - (void)closeAction{
-    
+    [self makeVenueMiniInfoViewHidden:YES animated:YES completion:nil];
 }
 
 #pragma mark - Delegates
@@ -189,6 +207,20 @@
     return annotationViewToReturn;
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    if (view.annotation != self.mapView.userLocation) {
+        [self makeVenueMiniInfoViewHidden:YES animated:YES completion:^{
+             Venue *venue = (Venue*)view.annotation;
+             self.venueMiniInfoViewController.venue = venue;
+            [self makeVenueMiniInfoViewHidden:NO animated:YES completion:nil];
+        }];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
+    [self makeVenueMiniInfoViewHidden:YES animated:YES completion:nil];
+}
+
 #pragma mark - Properties
 
 - (void)setLatestGMSAddress:(GMSAddress *)latestGMSAddress{
@@ -225,6 +257,44 @@
         }else{
             self.currentLocationView.alpha = resultAlpha;
             [self.view layoutIfNeeded];
+        }
+    });
+}
+
+- (void)makeVenueMiniInfoViewHidden:(BOOL)hidden animated:(BOOL)animated  completion:(void (^)(void))completion
+{
+    self.venueMiniInfoViewContainerViewHidden = hidden;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat resultAlpha;
+        if (_venueMiniInfoViewContainerViewHidden) {
+            resultAlpha = 0.0f;
+        }else{
+            resultAlpha = 1.0f;
+        }
+        if (animated){
+            [UIView animateWithDuration:[self animationTime] animations:^{
+                self.venueMiniInfoViewContainerView.alpha = resultAlpha;
+            } completion:^(BOOL finished){
+                if (completion) {
+                    completion();
+                }
+                if (hidden) {
+                    self.navigationItem.rightBarButtonItem = nil;
+                }else{
+                    self.navigationItem.rightBarButtonItem = self.closeBarButtonItem;
+                }
+            }];
+        }else{
+            self.venueMiniInfoViewContainerView.alpha = resultAlpha;
+            if (completion) {
+                completion();
+            }
+            if (hidden) {
+                self.navigationItem.rightBarButtonItem = nil;
+            }else{
+                self.navigationItem.rightBarButtonItem = self.closeBarButtonItem;
+            }
         }
     });
 }
@@ -275,6 +345,16 @@
     return _homeBarButtonItem;
 }
 
+- (VenueMiniInfoViewController*)venueMiniInfoViewController{
+    if (!_venueMiniInfoViewController) {
+        _venueMiniInfoViewController = [VenueMiniInfoViewController defaultVenueMiniInfoViewController];
+        _venueMiniInfoViewController.view.frame = self.venueMiniInfoViewContainerView.bounds;
+        [self addChildViewController:_venueMiniInfoViewController];
+        [self.venueMiniInfoViewContainerView addSubview:_venueMiniInfoViewController.view];
+    }
+    return _venueMiniInfoViewController;
+}
+
 #pragma mark - GraphicsProtocol
 
 - (void)updateTheme{
@@ -291,13 +371,15 @@
     
     UIImage *myLocationImage = [ProjectGraphicsProxy myLocationImage];
     self.currentLocationImageView.image = myLocationImage;
+    
+    self.venueMiniInfoViewContainerView.backgroundColor = [UIColor clearColor];
 }
 
 - (NSArray*)titleInvertedLabels{
     return @[self.addressLabel];
 }
 
-- (NSArray*)titleLabels{
+- (NSArray*)titleBoldLabels{
     return @[self.currentLocationTitleLabel];
 }
 

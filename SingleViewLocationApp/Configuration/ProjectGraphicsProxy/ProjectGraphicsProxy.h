@@ -29,6 +29,9 @@
 //@property (nonatomic, strong) UIColor *candyStoreThemeCoralTransparentColor;
 
 @property (nonatomic, strong) UIColor *lightGrayTransparentColor;
+@property (nonatomic, strong) UIColor *lightGrayOpaqueColor;
+
+@property (nonatomic, strong) UIColor *projectWhiteColor;
 
 + (UIImage*)closeIconImage;
 + (UIImage*)homeIconImage;

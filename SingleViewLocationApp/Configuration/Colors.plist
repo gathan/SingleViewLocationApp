@@ -4,10 +4,6 @@
 <dict>
 	<key>DefaultFlavorIdentifier</key>
 	<dict>
-		<key>titleLabelInvertedColor</key>
-		<string>255|255|255</string>
-		<key>defaultLabelInvertedColor</key>
-		<string>255|255|255</string>
 		<key>candyStoreThemeLightGreenColor</key>
 		<string>91|198|155</string>
 		<key>candyStoreThemeDarkGreenColor</key>
@@ -22,6 +18,16 @@
 		<string>198|115|99</string>
 		<key>lightGrayTransparentColor</key>
 		<string>223|219|212|90</string>
+		<key>lightGrayOpaqueColor</key>
+		<string>223|219|212</string>
+		<key>projectWhiteColor</key>
+		<string>255|255|255</string>
+		<key>defaultLabelInvertedColor</key>
+		<string>255|255|255</string>
+		<key>titleLabelInvertedColor</key>
+		<string>255|255|255</string>
+		<key>titleDifferentLabelColor</key>
+		<string>121|46|31</string>
 	</dict>
 </dict>
 </plist>

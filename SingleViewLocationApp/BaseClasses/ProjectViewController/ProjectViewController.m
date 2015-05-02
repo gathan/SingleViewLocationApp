@@ -24,11 +24,17 @@
     [super viewDidLoad];
     [self setNeedsStatusBarAppearanceUpdate];
     [self updateTheme];
+    [self updateTranslations];
     self.automaticallyAdjustsScrollViewInsets = self.automaticallyAdjustsScrollViewInsets;    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self updateThemeViewsGeometry];
+}
+
+- (void)updateTranslations{
+
 }
 
 #pragma mark - GraphicsProtocol
@@ -61,6 +67,10 @@
     [self giveGraphicsAndColorOutlets];
 }
 
+- (void)updateThemeViewsGeometry{
+
+}
+
 - (BOOL)automaticallyAdjustsScrollViewInsets{
     return NO;
 }
@@ -70,28 +80,70 @@
     if ([self respondsToSelector:@selector(titleLabels)]) {
         NSArray *titleLabels = [self titleLabels];
         for (UILabel *titleLabel in titleLabels) {
-            [titleLabel markLabelAsTitle];
+            [titleLabel markLabelAsTitleThatIsBold:NO];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(titleBoldLabels)]) {
+        NSArray *titleBoldLabels = [self titleBoldLabels];
+        for (UILabel *titleBoldLabel in titleBoldLabels) {
+            [titleBoldLabel markLabelAsTitleThatIsBold:YES];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(titleDifferentLabels)]) {
+        NSArray *titleDifferentLabels = [self titleDifferentLabels];
+        for (UILabel *titleDifferentLabel in titleDifferentLabels) {
+            [titleDifferentLabel markLabelAsTitleDifferentThatIsBold:NO];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(titleDifferentBoldLabels)]) {
+        NSArray *titleDifferentBoldLabels = [self titleDifferentBoldLabels];
+        for (UILabel *titleDifferentBoldLabel in titleDifferentBoldLabels) {
+            [titleDifferentBoldLabel markLabelAsTitleDifferentThatIsBold:YES];
         }
     }
     
     if ([self respondsToSelector:@selector(titleInvertedLabels)]) {
         NSArray *titleInvertedLabels = [self titleInvertedLabels];
         for (UILabel *titleInvertedlabel in titleInvertedLabels) {
-            [titleInvertedlabel markLabelAsTitleInverted];
+            [titleInvertedlabel markLabelAsTitleInvertedThatIsBold:NO];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(titleInvertedBoldLabels)]) {
+        NSArray *titleInvertedBoldLabels = [self titleInvertedBoldLabels];
+        for (UILabel *titleInvertedBoldLabel in titleInvertedBoldLabels) {
+            [titleInvertedBoldLabel markLabelAsTitleInvertedThatIsBold:YES];
         }
     }
     
     if ([self respondsToSelector:@selector(bodyLabels)]) {
         NSArray *bodyLabels = [self bodyLabels];
         for (UILabel *bodyLabel in bodyLabels) {
-            [bodyLabel markLabelAsBody];
+            [bodyLabel markLabelAsBodyThatIsBold:NO];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(bodyBoldLabels)]) {
+        NSArray *bodyBoldLabels = [self bodyBoldLabels];
+        for (UILabel *bodyBoldLabel in bodyBoldLabels) {
+            [bodyBoldLabel markLabelAsBodyThatIsBold:YES];
         }
     }
     
     if ([self respondsToSelector:@selector(bodyInvertedLabels)]) {
         NSArray *bodyInvertedLabels = [self bodyInvertedLabels];
         for (UILabel *bodyInvertedLabel in bodyInvertedLabels) {
-            [bodyInvertedLabel markLabelAsBodyInverted];
+            [bodyInvertedLabel markLabelAsBodyInvertedThatIsBold:NO];
+        }
+    }
+    
+    if ([self respondsToSelector:@selector(bodyInvertedBoldLabels)]) {
+        NSArray *bodyInvertedBoldLabels = [self bodyInvertedBoldLabels];
+        for (UILabel *bodyInvertedBoldLabel in bodyInvertedBoldLabels) {
+            [bodyInvertedBoldLabel markLabelAsBodyInvertedThatIsBold:YES];
         }
     }
 }

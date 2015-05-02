@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B45E8201AF52EA700A21C98 /* UIView+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45E81F1AF52EA600A21C98 /* UIView+ProjectAdditions.m */; };
+		2B4D80611AF516C800C8D791 /* VenueMiniInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D805F1AF516C800C8D791 /* VenueMiniInfoViewController.m */; };
+		2B4D80621AF516C800C8D791 /* VenueMiniInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D80601AF516C800C8D791 /* VenueMiniInfoViewController.xib */; };
 		2B545C821AF0243C00C4B864 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C811AF0243C00C4B864 /* main.m */; };
 		2B545C851AF0243C00C4B864 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B545C841AF0243C00C4B864 /* AppDelegate.m */; };
 		2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B545C8C1AF0243C00C4B864 /* Images.xcassets */; };
@@ -67,6 +70,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B45E81E1AF52EA600A21C98 /* UIView+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B45E81F1AF52EA600A21C98 /* UIView+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ProjectAdditions.m"; sourceTree = "<group>"; };
+		2B4D805E1AF516C800C8D791 /* VenueMiniInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueMiniInfoViewController.h; sourceTree = "<group>"; };
+		2B4D805F1AF516C800C8D791 /* VenueMiniInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueMiniInfoViewController.m; sourceTree = "<group>"; };
+		2B4D80601AF516C800C8D791 /* VenueMiniInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueMiniInfoViewController.xib; sourceTree = "<group>"; };
 		2B545C7C1AF0243C00C4B864 /* SingleViewLocationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleViewLocationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B545C801AF0243C00C4B864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B545C811AF0243C00C4B864 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -177,6 +185,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4D805D1AF516AB00C8D791 /* VenueMiniInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B4D805E1AF516C800C8D791 /* VenueMiniInfoViewController.h */,
+				2B4D805F1AF516C800C8D791 /* VenueMiniInfoViewController.m */,
+				2B4D80601AF516C800C8D791 /* VenueMiniInfoViewController.xib */,
+			);
+			path = VenueMiniInfoViewController;
+			sourceTree = "<group>";
+		};
 		2B545C731AF0243C00C4B864 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				2B545CD61AF0273E00C4B864 /* AllVenuesMapViewController */,
+				2B4D805D1AF516AB00C8D791 /* VenueMiniInfoViewController */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -449,6 +468,8 @@
 			children = (
 				2B5E80E11AF3D8E70060797A /* UIView+GraphicsProxy.h */,
 				2B5E80E21AF3D8E70060797A /* UIView+GraphicsProxy.m */,
+				2B45E81E1AF52EA600A21C98 /* UIView+ProjectAdditions.h */,
+				2B45E81F1AF52EA600A21C98 /* UIView+ProjectAdditions.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -586,6 +607,7 @@
 				2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */,
 				2BFE8BA91AF19BB500E331AE /* Akadimias20.gpx in Resources */,
 				2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */,
+				2B4D80621AF516C800C8D791 /* VenueMiniInfoViewController.xib in Resources */,
 				2B545D101AF042E400C4B864 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B45E8201AF52EA700A21C98 /* UIView+ProjectAdditions.m in Sources */,
 				2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */,
 				2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */,
 				2BFE8BA11AF1794900E331AE /* FourSquareDataSource.m in Sources */,
@@ -619,6 +642,7 @@
 				2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */,
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
 				2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */,
+				2B4D80611AF516C800C8D791 /* VenueMiniInfoViewController.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
 				2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,

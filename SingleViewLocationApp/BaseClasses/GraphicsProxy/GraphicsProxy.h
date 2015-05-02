@@ -13,14 +13,21 @@
 
 @optional
 - (void)updateTheme;
+- (void)updateThemeViewsGeometry;
 - (void)giveGraphicsAndColorOutlets;
 - (UIColor*)viewControllerBackgroundColor;
 - (UIColor*)navigationControllerBackgroundColor;
 - (UIColor*)navigationBarBackgroundColor;
 - (NSArray*)titleLabels;
+- (NSArray*)titleBoldLabels;
+- (NSArray*)titleDifferentLabels;
+- (NSArray*)titleDifferentBoldLabels;
 - (NSArray*)titleInvertedLabels;
+- (NSArray*)titleInvertedBoldLabels;
 - (NSArray*)bodyLabels;
+- (NSArray*)bodyBoldLabels;
 - (NSArray*)bodyInvertedLabels;
+- (NSArray*)bodyInvertedBoldLabels;
 
 @end
 
@@ -34,14 +41,17 @@
 @property (nonatomic, strong, readonly) UIColor *defaultLabelInvertedColor;
 @property (nonatomic, strong, readonly) UIColor *titleLabelColor;
 @property (nonatomic, strong, readonly) UIColor *titleLabelInvertedColor;
+@property (nonatomic, strong) UIColor *titleDifferentLabelColor;
 
 - (UIStatusBarStyle)statusBarStyle;
 
 - (BOOL)translucentNavigationBar;
 
 - (UIFont*)titleTextFontWithSize:(CGFloat)size;
-- (UIFont*)bodyTextFontWithSize:(CGFloat)size;
+- (UIFont*)titleBoldTextFontWithSize:(CGFloat)size;
 
+- (UIFont*)bodyTextFontWithSize:(CGFloat)size;
+- (UIFont*)bodyBoldTextFontWithSize:(CGFloat)size;
 
 + (NSString*)colorsFileNameToUse;
 

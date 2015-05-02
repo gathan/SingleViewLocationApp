@@ -12,10 +12,11 @@
 
 - (void)applyFont:(UIFont*)font;
 
-- (void)markLabelAsTitle;
-- (void)markLabelAsTitleInverted;
+- (void)markLabelAsTitleThatIsBold:(BOOL)bold;
+- (void)markLabelAsTitleInvertedThatIsBold:(BOOL)bold;
+- (void)markLabelAsTitleDifferentThatIsBold:(BOOL)bold;
 
-- (void)markLabelAsBody;
-- (void)markLabelAsBodyInverted;
+- (void)markLabelAsBodyThatIsBold:(BOOL)bold;
+- (void)markLabelAsBodyInvertedThatIsBold:(BOOL)bold;
 
 @end

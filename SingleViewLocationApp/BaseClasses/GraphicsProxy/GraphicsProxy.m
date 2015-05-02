@@ -82,7 +82,15 @@
     return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
 }
 
+- (UIFont*)titleBoldTextFontWithSize:(CGFloat)size{
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+}
+
 - (UIFont*)bodyTextFontWithSize:(CGFloat)size{
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+}
+
+- (UIFont*)bodyBoldTextFontWithSize:(CGFloat)size{
     return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 

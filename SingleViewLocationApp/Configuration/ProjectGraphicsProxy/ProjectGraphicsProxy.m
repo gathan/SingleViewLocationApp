@@ -30,8 +30,16 @@
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
 }
 
+- (UIFont*)titleBoldTextFontWithSize:(CGFloat)size{
+    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
+}
+
 - (UIFont*)bodyTextFontWithSize:(CGFloat)size{
     return [UIFont fontWithName:@"HelveticaNeue" size:size];
+}
+
+- (UIFont*)bodyBoldTextFontWithSize:(CGFloat)size{
+    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
 }
 
 + (UIImage*)closeIconImage{

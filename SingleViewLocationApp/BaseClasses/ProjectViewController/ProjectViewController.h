@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "GraphicsProxy.h"
 #import "ProjectGraphicsProxy.h"
+#import "UIView+ProjectAdditions.h"
+#import "NSString+Translations.h"
 
 @interface ProjectViewController : UIViewController <GraphicsProtocol>
 
 - (CGFloat)animationTime;
+
+- (void)updateTranslations;
 
 @end
