@@ -35,10 +35,12 @@
     BOOL isNumber = YES;
     if (![self isKindOfClass:[NSNumber class]]) {
         isNumber = NO;
-    }else{
+    }
+    else
+    {
     }
     
-    return YES;
+    return isNumber;
 }
 
 @end
