@@ -8,6 +8,7 @@
 
 #import "VenueMiniInfoViewController.h"
 #import "Venue.h"
+#import "NSObject+ProjectAdditions.h"
 
 @interface VenueMiniInfoViewController ()
 
@@ -48,6 +49,9 @@
     self.venueTitleLabel.text = self.venue.address;
     self.venueMiniTitleLabel.text = self.venue.phone;
     self.ratingLabel.text = self.venue.rating.stringValue;
+    if (![self.ratingLabel.text isStringAndNotEmpty]) {
+        self.ratingLabel.text = @"-/-";
+    }
 }
 
 - (void)updateVenuePhoto{
