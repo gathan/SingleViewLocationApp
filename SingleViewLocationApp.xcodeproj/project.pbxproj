@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2B42EA1AF570170066D91B /* FourSquareDataSource+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B42E91AF570170066D91B /* FourSquareDataSource+ProjectAdditions.m */; };
+		2B2B42EE1AF574150066D91B /* VenuePhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B42ED1AF574150066D91B /* VenuePhotosDataSource.m */; };
+		2B2B42F41AF574600066D91B /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B42F31AF574600066D91B /* VenuePhoto.m */; };
 		2B45E8201AF52EA700A21C98 /* UIView+ProjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45E81F1AF52EA600A21C98 /* UIView+ProjectAdditions.m */; };
 		2B4D80611AF516C800C8D791 /* VenueMiniInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D805F1AF516C800C8D791 /* VenueMiniInfoViewController.m */; };
 		2B4D80621AF516C800C8D791 /* VenueMiniInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D80601AF516C800C8D791 /* VenueMiniInfoViewController.xib */; };
@@ -70,6 +73,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2B42E81AF570170066D91B /* FourSquareDataSource+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FourSquareDataSource+ProjectAdditions.h"; sourceTree = "<group>"; };
+		2B2B42E91AF570170066D91B /* FourSquareDataSource+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FourSquareDataSource+ProjectAdditions.m"; sourceTree = "<group>"; };
+		2B2B42EC1AF574150066D91B /* VenuePhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhotosDataSource.h; sourceTree = "<group>"; };
+		2B2B42ED1AF574150066D91B /* VenuePhotosDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuePhotosDataSource.m; sourceTree = "<group>"; };
+		2B2B42F21AF574600066D91B /* VenuePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhoto.h; sourceTree = "<group>"; };
+		2B2B42F31AF574600066D91B /* VenuePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuePhoto.m; sourceTree = "<group>"; };
 		2B45E81E1AF52EA600A21C98 /* UIView+ProjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ProjectAdditions.h"; sourceTree = "<group>"; };
 		2B45E81F1AF52EA600A21C98 /* UIView+ProjectAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ProjectAdditions.m"; sourceTree = "<group>"; };
 		2B4D805E1AF516C800C8D791 /* VenueMiniInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueMiniInfoViewController.h; sourceTree = "<group>"; };
@@ -185,6 +194,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2B42E71AF56FE30066D91B /* FourSquareDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2B2B42E81AF570170066D91B /* FourSquareDataSource+ProjectAdditions.h */,
+				2B2B42E91AF570170066D91B /* FourSquareDataSource+ProjectAdditions.m */,
+			);
+			path = FourSquareDataSource;
+			sourceTree = "<group>";
+		};
+		2B2B42EB1AF574150066D91B /* VenuePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				2B2B42F21AF574600066D91B /* VenuePhoto.h */,
+				2B2B42F31AF574600066D91B /* VenuePhoto.m */,
+				2B2B42EC1AF574150066D91B /* VenuePhotosDataSource.h */,
+				2B2B42ED1AF574150066D91B /* VenuePhotosDataSource.m */,
+			);
+			path = VenuePhoto;
+			sourceTree = "<group>";
+		};
 		2B4D805D1AF516AB00C8D791 /* VenueMiniInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +309,7 @@
 				2B545CC71AF026C200C4B864 /* NSString */,
 				2B545CCA1AF026C200C4B864 /* UIViewController */,
 				2B5E80E01AF3D8C80060797A /* UIView */,
+				2B2B42E71AF56FE30066D91B /* FourSquareDataSource */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -314,6 +344,7 @@
 				2BFE8B9B1AF1794900E331AE /* ProjectFourSquareDataSource.m */,
 				2BFE8B9C1AF1794900E331AE /* Venue */,
 				2B545D021AF035E300C4B864 /* GoogleMapsAPI */,
+				2B2B42EB1AF574150066D91B /* VenuePhoto */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -626,6 +657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2B42EA1AF570170066D91B /* FourSquareDataSource+ProjectAdditions.m in Sources */,
 				2B45E8201AF52EA700A21C98 /* UIView+ProjectAdditions.m in Sources */,
 				2B545CB81AF0256F00C4B864 /* ProjectViewController.m in Sources */,
 				2BFE8BA31AF1794900E331AE /* ProjectFourSquareDataSource.m in Sources */,
@@ -642,8 +674,10 @@
 				2BFE8BA51AF1794900E331AE /* VenueDataSource.m in Sources */,
 				2B545C821AF0243C00C4B864 /* main.m in Sources */,
 				2B5E80DF1AF3CCC60060797A /* ProjectGraphicsProxy.m in Sources */,
+				2B2B42EE1AF574150066D91B /* VenuePhotosDataSource.m in Sources */,
 				2B4D80611AF516C800C8D791 /* VenueMiniInfoViewController.m in Sources */,
 				2B545CCE1AF026C200C4B864 /* UIViewController+ProjectAdditions.m in Sources */,
+				2B2B42F41AF574600066D91B /* VenuePhoto.m in Sources */,
 				2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */,
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
 				2BFE8BA41AF1794900E331AE /* Venue.m in Sources */,

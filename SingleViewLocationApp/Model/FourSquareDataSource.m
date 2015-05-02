@@ -87,7 +87,7 @@
         
         [foursquareObjectsMutableArray addObject:foursquareObject];
         
-        NSString *logString = [NSString stringWithFormat:@"Parsed FoursquareObject: %@", foursquareObject];
+        NSString *logString = [NSString stringWithFormat:@"\nParsed FoursquareObject: %@", foursquareObject];
         [logString log];
     }
     
@@ -100,7 +100,12 @@
 
 - (void)requestDidFinishLoading:(BZFoursquareRequest *)request{
     [@"Foursquare Request did finish loading" log];
-    NSArray *foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:[request.response objectForKey:@"venues"]];
+    NSArray *whatToParse = [request.response objectForKey:@"venues"];
+    NSArray *foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:whatToParse];
+    if (!whatToParse) {
+        whatToParse = [[request.response objectForKey:@"photos"] objectForKey:@"items"];
+        foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:whatToParse];
+    }
     if (self.delegate && [self.delegate respondsToSelector:@selector(fourSquareDataSource:successfullyFetchedFourSquareObjects:)])
     {
         [self.delegate fourSquareDataSource:self successfullyFetchedFourSquareObjects:foursquareObjects];

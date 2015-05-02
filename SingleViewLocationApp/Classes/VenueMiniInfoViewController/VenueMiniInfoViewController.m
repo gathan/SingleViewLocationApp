@@ -9,12 +9,16 @@
 #import "VenueMiniInfoViewController.h"
 #import "Venue.h"
 #import "NSObject+ProjectAdditions.h"
+#import "VenuePhotosDataSource.h"
+#import "VenuePhoto.h"
 
-@interface VenueMiniInfoViewController ()
+@interface VenueMiniInfoViewController () <FourSquareDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (nonatomic, strong) VenuePhotosDataSource *venuePhotosDataSource;
 
 #pragma mark - IBOutlets
+
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 #pragma mark -- Venue Info Outlets
 
@@ -101,6 +105,27 @@
     return @[self.ratingLabel];
 }
 
+#pragma mark -- FourSquareDelegate
+
+- (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource successfullyFetchedFourSquareObjects:(NSArray*)foursquareObjectsArray
+{
+    [self updateVenuePhoto];
+}
+
+- (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource
+             failedWithError:(NSError*)error{
+
+}
+
+#pragma mark - Actions
+
+- (void)fetchVenuePhotos{
+    self.venuePhotosDataSource.delegate = self;
+    [self.venuePhotosDataSource fetchVenuePhotosForVenue:_venue
+                                              withALimit:YES
+                                                      of:1];
+}
+
 #pragma mark - Properties
 
 - (void)setVenue:(Venue *)venue{
@@ -109,8 +134,16 @@
     [self updateUI];
     if (differentVenue) {
         self.venuePhotoImageView.image = nil;
-        [self updateVenuePhoto];
+        
+        [self fetchVenuePhotos];
     }
+}
+
+- (VenuePhotosDataSource*)venuePhotosDataSource{
+    if (!_venuePhotosDataSource) {
+        _venuePhotosDataSource = [[VenuePhotosDataSource alloc]init];
+    }
+    return _venuePhotosDataSource;
 }
 
 #pragma mark - Class Methods
