@@ -71,6 +71,7 @@
 		2B9262D21AF592D9006BC0C3 /* FourSquareDataSourceAndProjectAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262D11AF592D9006BC0C3 /* FourSquareDataSourceAndProjectAdditionsTests.m */; };
 		2B9262D71AF59656006BC0C3 /* UIView+ProjectAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262D61AF59656006BC0C3 /* UIView+ProjectAnimations.m */; };
 		2B9262DB1AF5A5B4006BC0C3 /* ProjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262DA1AF5A5B4006BC0C3 /* ProjectLabel.m */; };
+		2B9262DE1AF5B67A006BC0C3 /* SingleViewLocationAppLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B9262DD1AF5B67A006BC0C3 /* SingleViewLocationAppLicense.txt */; };
 		2BFC39D61AF3F12400B42369 /* VenueAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */; };
 		2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D91AF3F1AB00B42369 /* ProjectAnnotationView.m */; };
 		2BFC3A071AF3FF0200B42369 /* UserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC3A061AF3FF0200B42369 /* UserLocationAnnotationView.m */; };
@@ -204,6 +205,7 @@
 		2B9262D61AF59656006BC0C3 /* UIView+ProjectAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ProjectAnimations.m"; sourceTree = "<group>"; };
 		2B9262D91AF5A5B4006BC0C3 /* ProjectLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabel.h; sourceTree = "<group>"; };
 		2B9262DA1AF5A5B4006BC0C3 /* ProjectLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabel.m; sourceTree = "<group>"; };
+		2B9262DD1AF5B67A006BC0C3 /* SingleViewLocationAppLicense.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SingleViewLocationAppLicense.txt; sourceTree = "<group>"; };
 		2BFC39D41AF3F12400B42369 /* VenueAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueAnnotationView.h; sourceTree = "<group>"; };
 		2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueAnnotationView.m; sourceTree = "<group>"; };
 		2BFC39D81AF3F1AB00B42369 /* ProjectAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectAnnotationView.h; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		2B545C731AF0243C00C4B864 = {
 			isa = PBXGroup;
 			children = (
+				2B9262DD1AF5B67A006BC0C3 /* SingleViewLocationAppLicense.txt */,
 				2BFE8BA61AF19B8D00E331AE /* GPXFiles */,
 				2BFE8B861AF178ED00E331AE /* ThirdPartySoftware */,
 				2B545D0C1AF042BF00C4B864 /* Frameworks */,
@@ -785,6 +788,7 @@
 				2B42CC881AF587DD00510BD3 /* LICENSE in Resources */,
 				2B545CDB1AF0275200C4B864 /* AllVenuesMapViewController.xib in Resources */,
 				2BFE8BA91AF19BB500E331AE /* Akadimias20.gpx in Resources */,
+				2B9262DE1AF5B67A006BC0C3 /* SingleViewLocationAppLicense.txt in Resources */,
 				2B545C8D1AF0243C00C4B864 /* Images.xcassets in Resources */,
 				2B4D80621AF516C800C8D791 /* VenueMiniInfoViewController.xib in Resources */,
 				2B545D101AF042E400C4B864 /* GoogleMaps.bundle in Resources */,
