@@ -181,7 +181,10 @@
 }
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
-    [self makeVenueMiniInfoViewHidden:YES animated:YES completion:nil];
+    if (!animated) {//animated is when user is changing location, for example a city bicycle ride. not animated when he pans the map
+        id <MKAnnotation> selectedAnnotation = [self.mapView.selectedAnnotations firstObject];
+        [self.mapView deselectAnnotation:selectedAnnotation animated:YES];
+    }
 }
 
 - (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
