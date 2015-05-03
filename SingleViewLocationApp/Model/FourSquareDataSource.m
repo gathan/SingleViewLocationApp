@@ -83,7 +83,7 @@
     {
         FourSquareObject *foursquareObject = (FourSquareObject*)[[classToParse alloc]init];
         
-        [foursquareObject fullfillDataFromFoursquareDictionary:foursquareObjectDictionary];
+        [foursquareObject fullfillDataFromFoursquareDictionary:[foursquareObjectDictionary mutableCopy]];
         
         [foursquareObjectsMutableArray addObject:foursquareObject];
         
@@ -98,14 +98,14 @@
     return [FourSquareObject class];
 }
 
+- (NSArray*)arrayOfObjectsFromRequest:(BZFoursquareRequest*)request{
+    return nil;
+}
+
 - (void)requestDidFinishLoading:(BZFoursquareRequest *)request{
     [@"Foursquare Request did finish loading" log];
-    NSArray *whatToParse = [request.response objectForKey:@"venues"];
+    NSArray *whatToParse = [self arrayOfObjectsFromRequest:request];
     NSArray *foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:whatToParse];
-    if (!whatToParse) {
-        whatToParse = [[request.response objectForKey:@"photos"] objectForKey:@"items"];
-        foursquareObjects = [self foursquareObjectsFromResponseObjectsArray:whatToParse];
-    }
     if (self.delegate && [self.delegate respondsToSelector:@selector(fourSquareDataSource:successfullyFetchedFourSquareObjects:)])
     {
         [self.delegate fourSquareDataSource:self successfullyFetchedFourSquareObjects:foursquareObjects];

@@ -15,6 +15,13 @@
 
 #pragma mark - Instance Methods
 
+- (NSArray*)arrayOfObjectsFromRequest:(BZFoursquareRequest*)request{
+    NSArray *whatToParse;
+    whatToParse = [[request.response objectForKey:@"photos"] objectForKey:@"items"];
+    
+    return whatToParse;
+}
+
 - (void)fetchVenuePhotosForVenue:(Venue*)venue withALimit:(BOOL)withLimit of:(NSInteger)limit
 {
     NSString *urlForVenuesSearch = [VenuePhotosDataSource urlForVenuePhotoSearchForVenue:venue];

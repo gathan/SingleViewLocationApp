@@ -9,6 +9,7 @@
 #import "Venue.h"
 #import "NSObject+ProjectAdditions.h"
 #import <CoreLocation/CoreLocation.h>
+#import "VenuePhotosDataSource.h"
 
 @implementation Venue
 
@@ -26,7 +27,9 @@
                                                   @"distance"           : @"distance",
                                                   @"lat"                : @"latitude",
                                                   @"lng"                : @"longtitude",
-                                                  @"postalCode"         : @"postalCode"};
+                                                  @"postalCode"         : @"postalCode",
+                                                  @"rating"             : @"rating",                                                  
+                                                  @"ratingSignals"      : @"ratingSignals"};
     
     NSDictionary *superPropertiesAndKeysDictionary = [[self superclass] propertiesAndKeysDictionary];
     NSMutableDictionary *finalPropertiesAndKeysMutableDictionary = [[NSMutableDictionary alloc]init];
@@ -75,6 +78,21 @@
             [self setObject:@(lng) forKey:@"lng"];
             [self setObject:postalCode forKey:@"postalCode"];
             [self setObject:state forKey:@"state"];
+        }else if ([key isEqualToString:@"likes"]){
+            NSDictionary *likesDictionary = (NSDictionary*)object;
+            self.likesCountNumber = [likesDictionary objectForKey:@"count"];
+        }else if ([key isEqualToString:@"dislikes"]){
+            NSDictionary *dislikesDictionary = (NSDictionary*)object;
+            self.dislikesCountNumber = [dislikesDictionary objectForKey:@"count"];
+        }else if ([key isEqualToString:@"photos"]){
+            VenuePhotosDataSource *venuePhotosDataSource = [[VenuePhotosDataSource alloc]init];
+            NSDictionary *photosDictionary = (NSDictionary*)object;
+            NSArray *arrayToParse = [[[photosDictionary objectForKey:@"groups"] lastObject] objectForKey:@"items"];
+            
+            self.venuePhotosArray = [venuePhotosDataSource foursquareObjectsFromResponseObjectsArray:arrayToParse];
+        }else if ([key isEqualToString:@"categories"]){
+            NSArray *categoriesArray = (NSArray*)object;
+            self.firstCategoryName = [[categoriesArray firstObject] objectForKey:@"name"];
         }
  
         [self setObject:object forKey:key];

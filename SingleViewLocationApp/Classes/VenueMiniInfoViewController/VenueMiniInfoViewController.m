@@ -9,16 +9,16 @@
 #import "VenueMiniInfoViewController.h"
 #import "Venue.h"
 #import "NSObject+ProjectAdditions.h"
-#import "VenuePhotosDataSource.h"
 #import "VenuePhoto.h"
+#import "VenueDataSource.h"
 #import "UIImageView+WebCache.h"
 #import "FourSquareDataSource+ProjectAdditions.h"
 #import "UIView+ProjectAnimations.h"
 
 @interface VenueMiniInfoViewController () <FourSquareDelegate>
 
-@property (nonatomic, strong) VenuePhotosDataSource *venuePhotosDataSource;
-@property (nonatomic, strong) VenuePhoto *firstVenuePhoto;
+@property (nonatomic, strong) VenueDataSource *venueDataSource;
+@property (nonatomic, strong) Venue *completeVenue;
 
 #pragma mark - IBOutlets
 
@@ -55,16 +55,18 @@
 - (void)updateUI{
     self.venueSuperTitleLabel.text = self.venue.name;
     self.venueTitleLabel.text = self.venue.address;
-    self.venueMiniTitleLabel.text = self.venue.phone;
-    self.ratingLabel.text = self.venue.rating.stringValue;
+    self.venueMiniTitleLabel.text = self.completeVenue.firstCategoryName;
+    self.ratingLabel.text = self.completeVenue.rating.stringValue;
+    
     if (![self.ratingLabel.text isStringAndNotEmpty]) {
-        self.ratingLabel.text = @"-/-";
+        self.ratingLabel.text = @"...";
     }
 }
 
 - (void)updateVenuePhoto{
-    NSString *venuePhotoImageURLString = [FourSquareDataSource urlStringForFourSquarePhotoOf100x100SizeWithPrefix:self.firstVenuePhoto.prefix
-                                                                                                        andSuffix:self.firstVenuePhoto.suffix];
+    VenuePhoto *firstVenuePhoto = [self.completeVenue.venuePhotosArray firstObject];
+    NSString *venuePhotoImageURLString = [FourSquareDataSource urlStringForFourSquarePhotoOf100x100SizeWithPrefix:firstVenuePhoto.prefix
+                                                                                                        andSuffix:firstVenuePhoto.suffix];
     NSURL *urlToSet = [NSURL URLWithString:venuePhotoImageURLString];
     UIImage *placeholderLogoImage = [ProjectGraphicsProxy logo];
     [self.venuePhotoImageView sd_setImageWithURL:urlToSet
@@ -126,22 +128,12 @@
 
 - (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource successfullyFetchedFourSquareObjects:(NSArray*)foursquareObjectsArray
 {
-    self.firstVenuePhoto = [foursquareObjectsArray firstObject];
-    [self updateVenuePhoto];
+    self.completeVenue = [foursquareObjectsArray firstObject];
 }
 
 - (void)fourSquareDataSource:(FourSquareDataSource*)fourSquareDataSource
              failedWithError:(NSError*)error{
-
-}
-
-#pragma mark - Actions
-
-- (void)fetchVenuePhotos{
-    self.venuePhotosDataSource.delegate = self;
-    [self.venuePhotosDataSource fetchVenuePhotosForVenue:_venue
-                                              withALimit:YES
-                                                      of:1];
+    [self.venueDataSource fetchCompleteVenueWithVenueId:_venue.codeId];
 }
 
 #pragma mark - Properties
@@ -149,21 +141,29 @@
 - (void)setVenue:(Venue *)venue{
     BOOL differentVenue = ![venue.codeId isEqualToString:_venue.codeId];
     _venue = venue;
-    [self updateUI];
     if (differentVenue) {
-        self.venuePhotosDataSource = nil;
+        self.completeVenue = nil;
+        self.venueDataSource = nil;
+        self.venueDataSource.delegate = self;
+        [self.venueDataSource fetchCompleteVenueWithVenueId:_venue.codeId];
+        
         UIImage *placeholderLogoImage = [ProjectGraphicsProxy logo];
         self.venuePhotoImageView.image = placeholderLogoImage;
-        
-        [self fetchVenuePhotos];
     }
+    [self updateUI];
 }
 
-- (VenuePhotosDataSource*)venuePhotosDataSource{
-    if (!_venuePhotosDataSource) {
-        _venuePhotosDataSource = [[VenuePhotosDataSource alloc]init];
+- (void)setCompleteVenue:(Venue *)completeVenue{
+    _completeVenue = completeVenue;
+    [self updateUI];
+    [self updateVenuePhoto];
+}
+
+- (VenueDataSource*)venueDataSource{
+    if (!_venueDataSource) {
+        _venueDataSource = [[VenueDataSource alloc]init];
     }
-    return _venuePhotosDataSource;
+    return _venueDataSource;
 }
 
 #pragma mark - Class Methods

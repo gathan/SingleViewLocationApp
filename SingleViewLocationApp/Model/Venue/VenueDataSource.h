@@ -12,5 +12,6 @@
 @interface VenueDataSource : ProjectFourSquareDataSource
 
 - (void)fetchVenuesForLocationCoordinate:(CLLocationCoordinate2D)locationCoordinate;
+- (void)fetchCompleteVenueWithVenueId:(NSString*)venueId;
 
 @end

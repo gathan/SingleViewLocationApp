@@ -56,7 +56,7 @@
     return objectDictionary;
 }
 
-- (void)fullfillDataFromFoursquareDictionary:(NSDictionary*)foursquareDictionary{
+- (void)fullfillDataFromFoursquareDictionary:(NSMutableDictionary*)foursquareDictionary{
     for (NSString *key in foursquareDictionary.allKeys) {
         NSObject *object = [foursquareDictionary objectForKey:key];
         [self parseObjectDictionaryFromObject:object forKey:key];

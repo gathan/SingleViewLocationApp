@@ -27,5 +27,10 @@
 @property (nonatomic, strong) NSNumber *latitude;
 @property (nonatomic, strong) NSNumber *longtitude;
 @property (nonatomic, strong) NSString *postalCode;
+@property (nonatomic, strong) NSNumber *likesCountNumber;
+@property (nonatomic, strong) NSNumber *dislikesCountNumber;
+@property (nonatomic, strong) NSNumber *ratingSignals;
+@property (nonatomic, strong) NSArray *venuePhotosArray;
+@property (nonatomic, strong) NSString *firstCategoryName;
 
 @end

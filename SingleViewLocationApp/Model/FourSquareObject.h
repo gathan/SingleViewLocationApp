@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSString *codeId;
 
-- (void)fullfillDataFromFoursquareDictionary:(NSDictionary*)foursquareDictionary;
+- (void)fullfillDataFromFoursquareDictionary:(NSMutableDictionary*)foursquareDictionary;
 - (void)setObject:(NSObject*)object forKey:(NSString*)key;
 - (NSDictionary*)parseObjectDictionaryFromObject:(NSObject*)object forKey:(NSString*)key;
 
