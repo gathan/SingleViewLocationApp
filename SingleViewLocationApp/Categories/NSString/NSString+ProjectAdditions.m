@@ -9,7 +9,7 @@
 #import "NSString+ProjectAdditions.h"
 #import "NSObject+ProjectAdditions.h"
 
-#define LOG_ENABLED 1
+#define LOG_ENABLED 0
 
 @implementation NSString (ProjectAdditions)
 
