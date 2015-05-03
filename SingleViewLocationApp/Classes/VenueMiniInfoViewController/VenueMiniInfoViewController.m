@@ -77,7 +77,7 @@
 
 - (void)updateTheme{
     [super updateTheme];
-    self.view.layer.cornerRadius = 4.0f;
+    self.view.layer.cornerRadius = 6.0f;
     self.view.clipsToBounds = YES;
     self.contentView.backgroundColor = [[ProjectGraphicsProxy sharedProxy] projectWhiteColor];
 }

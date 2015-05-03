@@ -37,13 +37,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="38"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT LOCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyx-nx-Gmy">
-                                    <rect key="frame" x="234" y="5" width="133" height="28"/>
+                                    <rect key="frame" x="234" y="13" width="133" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Wx-fb-6rb">
-                                    <rect key="frame" x="211" y="12" width="15" height="15"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-mylocation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wx-fb-6rb">
+                                    <rect key="frame" x="211" y="14" width="15" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="15" id="HFQ-bW-Ncn"/>
                                         <constraint firstAttribute="height" constant="15" id="kjG-QU-r0j"/>
@@ -52,20 +52,17 @@
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.41365771270000001" blue="0.18972028690000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="centerY" secondItem="Gyx-nx-Gmy" secondAttribute="centerY" id="7go-V6-iWG"/>
+                                <constraint firstAttribute="centerY" secondItem="Gyx-nx-Gmy" secondAttribute="centerY" constant="-2" id="7go-V6-iWG"/>
                                 <constraint firstAttribute="centerX" secondItem="Gyx-nx-Gmy" secondAttribute="centerX" id="8WQ-wY-ZqA"/>
-                                <constraint firstAttribute="bottom" secondItem="Gyx-nx-Gmy" secondAttribute="bottom" constant="5" id="bxg-io-nqJ"/>
-                                <constraint firstItem="Gyx-nx-Gmy" firstAttribute="centerY" secondItem="4Wx-fb-6rb" secondAttribute="centerY" id="dbQ-LY-NUd"/>
                                 <constraint firstAttribute="height" constant="38" id="emZ-pc-MAZ"/>
                                 <constraint firstItem="Gyx-nx-Gmy" firstAttribute="leading" secondItem="4Wx-fb-6rb" secondAttribute="trailing" constant="8" symbolic="YES" id="hf8-O7-enB"/>
-                                <constraint firstItem="Gyx-nx-Gmy" firstAttribute="top" secondItem="FeI-Hq-sO5" secondAttribute="top" constant="5" id="vfg-gb-mzU"/>
+                                <constraint firstItem="4Wx-fb-6rb" firstAttribute="bottom" secondItem="Gyx-nx-Gmy" secondAttribute="bottom" id="ow0-SX-kIE"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNQ-d5-yBL" userLabel="Address View">
                             <rect key="frame" x="0.0" y="38" width="600" height="63"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="400" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-KB-r0v" userLabel="Address Label">
-                                    <rect key="frame" x="20" y="21" width="560" height="22"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="400" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-KB-r0v" userLabel="Address Label">
                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -95,29 +92,32 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-cW-4Td" userLabel="VenueMiniInfoViewController container view">
-                    <rect key="frame" x="8" y="74" width="584" height="100"/>
+                    <rect key="frame" x="14" y="78" width="572" height="120"/>
                     <color key="backgroundColor" red="0.65030570649999997" green="0.072425882629999994" blue="0.1524872159" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="BrX-CB-Usq"/>
+                        <constraint firstAttribute="height" constant="120" id="BrX-CB-Usq"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="pA3-yP-Wq8" secondAttribute="trailing" id="1yf-XO-7fh"/>
-                <constraint firstItem="kpe-cW-4Td" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="FLl-mq-CWn"/>
+                <constraint firstItem="kpe-cW-4Td" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="FLl-mq-CWn"/>
                 <constraint firstItem="qSs-dc-an7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Jpq-vd-IBi"/>
                 <constraint firstAttribute="bottom" secondItem="pA3-yP-Wq8" secondAttribute="bottom" id="Mhv-ap-RfN"/>
                 <constraint firstItem="qSs-dc-an7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QCv-cF-RZp"/>
-                <constraint firstAttribute="trailing" secondItem="kpe-cW-4Td" secondAttribute="trailing" constant="8" id="aKE-hA-XAi"/>
+                <constraint firstAttribute="trailing" secondItem="kpe-cW-4Td" secondAttribute="trailing" constant="14" id="aKE-hA-XAi"/>
                 <constraint firstAttribute="bottom" secondItem="qSs-dc-an7" secondAttribute="bottom" id="eok-0f-y8g"/>
                 <constraint firstItem="pA3-yP-Wq8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gKN-ns-iOD"/>
                 <constraint firstAttribute="trailing" secondItem="qSs-dc-an7" secondAttribute="trailing" id="mEq-ds-AnL"/>
-                <constraint firstItem="kpe-cW-4Td" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="usb-uO-0zy"/>
+                <constraint firstItem="kpe-cW-4Td" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="78" id="usb-uO-0zy"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="140" y="154"/>
         </view>
     </objects>
+    <resources>
+        <image name="ico-mylocation" width="15" height="15"/>
+    </resources>
 </document>
