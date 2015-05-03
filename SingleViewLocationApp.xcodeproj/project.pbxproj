@@ -70,6 +70,7 @@
 		2B9262D01AF59155006BC0C3 /* NSObjectAndProjectAdditionsCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262CF1AF59155006BC0C3 /* NSObjectAndProjectAdditionsCategoryTests.m */; };
 		2B9262D21AF592D9006BC0C3 /* FourSquareDataSourceAndProjectAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262D11AF592D9006BC0C3 /* FourSquareDataSourceAndProjectAdditionsTests.m */; };
 		2B9262D71AF59656006BC0C3 /* UIView+ProjectAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262D61AF59656006BC0C3 /* UIView+ProjectAnimations.m */; };
+		2B9262DB1AF5A5B4006BC0C3 /* ProjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9262DA1AF5A5B4006BC0C3 /* ProjectLabel.m */; };
 		2BFC39D61AF3F12400B42369 /* VenueAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */; };
 		2BFC39DA1AF3F1AB00B42369 /* ProjectAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC39D91AF3F1AB00B42369 /* ProjectAnnotationView.m */; };
 		2BFC3A071AF3FF0200B42369 /* UserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC3A061AF3FF0200B42369 /* UserLocationAnnotationView.m */; };
@@ -201,6 +202,8 @@
 		2B9262D11AF592D9006BC0C3 /* FourSquareDataSourceAndProjectAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourSquareDataSourceAndProjectAdditionsTests.m; sourceTree = "<group>"; };
 		2B9262D51AF59656006BC0C3 /* UIView+ProjectAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ProjectAnimations.h"; sourceTree = "<group>"; };
 		2B9262D61AF59656006BC0C3 /* UIView+ProjectAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ProjectAnimations.m"; sourceTree = "<group>"; };
+		2B9262D91AF5A5B4006BC0C3 /* ProjectLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectLabel.h; sourceTree = "<group>"; };
+		2B9262DA1AF5A5B4006BC0C3 /* ProjectLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectLabel.m; sourceTree = "<group>"; };
 		2BFC39D41AF3F12400B42369 /* VenueAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueAnnotationView.h; sourceTree = "<group>"; };
 		2BFC39D51AF3F12400B42369 /* VenueAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueAnnotationView.m; sourceTree = "<group>"; };
 		2BFC39D81AF3F1AB00B42369 /* ProjectAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectAnnotationView.h; sourceTree = "<group>"; };
@@ -418,6 +421,7 @@
 				2B545CB01AF0256F00C4B864 /* ProjectLocationManager */,
 				2B545CF61AF033D700C4B864 /* ProjectGoogleMapsManager */,
 				2BFC39D71AF3F15D00B42369 /* ProjectAnnotationView */,
+				2B9262D81AF5A59F006BC0C3 /* ProjectLabel */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -637,6 +641,15 @@
 			path = CategoriesTests;
 			sourceTree = "<group>";
 		};
+		2B9262D81AF5A59F006BC0C3 /* ProjectLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2B9262D91AF5A5B4006BC0C3 /* ProjectLabel.h */,
+				2B9262DA1AF5A5B4006BC0C3 /* ProjectLabel.m */,
+			);
+			path = ProjectLabel;
+			sourceTree = "<group>";
+		};
 		2BFC39D71AF3F15D00B42369 /* ProjectAnnotationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +842,7 @@
 				2B545CBB1AF0257F00C4B864 /* ProjectLocationManager.m in Sources */,
 				2BFE8BA41AF1794900E331AE /* Venue.m in Sources */,
 				2B42CC8D1AF587DD00510BD3 /* SDWebImageCompat.m in Sources */,
+				2B9262DB1AF5A5B4006BC0C3 /* ProjectLabel.m in Sources */,
 				2B42CC8B1AF587DD00510BD3 /* NSData+ImageContentType.m in Sources */,
 				2B545D0B1AF03EA000C4B864 /* NSObject+ProjectAdditions.m in Sources */,
 				2B545CCD1AF026C200C4B864 /* NSString+ProjectAdditions.m in Sources */,

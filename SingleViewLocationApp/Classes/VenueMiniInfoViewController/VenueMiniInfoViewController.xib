@@ -20,11 +20,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="342" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTf-Il-ycC" userLabel="Content View">
-                    <rect key="frame" x="6" y="6" width="388" height="108"/>
+                    <rect key="frame" x="6" y="6" width="330" height="108"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WE1-ec-B1K">
                             <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
@@ -32,36 +32,49 @@
                                 <constraint firstAttribute="width" secondItem="WE1-ec-B1K" secondAttribute="height" multiplier="1:1" id="U5c-If-umY"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="900" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErQ-1W-J2Z" userLabel="Super title">
-                            <rect key="frame" x="125" y="8" width="188" height="58"/>
-                            <string key="text">Lateau
-Pattiserie</string>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateau Pattiserie" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ErQ-1W-J2Z" userLabel="Super title" customClass="ProjectLabel">
+                            <rect key="frame" x="125" y="8" width="130" height="35"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                            </accessibility>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="r2a-PV-YkS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateu pattiserie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHB-uh-4EK" userLabel="title">
-                            <rect key="frame" x="125" y="74" width="188" height="10"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lateu pattiserie" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="YHB-uh-4EK" userLabel="title" customClass="ProjectLabel">
+                            <rect key="frame" x="125" y="51" width="130" height="28"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                            </accessibility>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="63i-G2-gQV"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="63i-G2-gQV"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lateu pattiserie" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWb-Bt-Adi" userLabel="mini title">
-                            <rect key="frame" x="125" y="90" width="188" height="10"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lateu pattiserie" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="qWb-Bt-Adi" userLabel="mini title" customClass="ProjectLabel">
+                            <rect key="frame" x="125" y="85" width="130" height="15"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
+                            </accessibility>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="tlE-3P-Ldz"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEb-OM-Kb9" userLabel="rating Eclipse View">
-                            <rect key="frame" x="321" y="28" width="52" height="52"/>
+                            <rect key="frame" x="263" y="28" width="52" height="52"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-9M-ZO0" userLabel="Eclipse Content View">
                                     <rect key="frame" x="4" y="4" width="44" height="44"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Laf-L0-nhl" userLabel="Rating Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Laf-L0-nhl" userLabel="Rating Label">
                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,6 +84,10 @@ Pattiserie</string>
                                     <color key="backgroundColor" red="0.1235194052" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="3OB-5S-muO"/>
+                                        <constraint firstAttribute="trailing" secondItem="Laf-L0-nhl" secondAttribute="trailing" id="AOe-G8-nru"/>
+                                        <constraint firstItem="Laf-L0-nhl" firstAttribute="top" secondItem="Eay-9M-ZO0" secondAttribute="top" id="J34-Kk-wsu"/>
+                                        <constraint firstItem="Laf-L0-nhl" firstAttribute="leading" secondItem="Eay-9M-ZO0" secondAttribute="leading" id="dre-zX-1jN"/>
+                                        <constraint firstAttribute="bottom" secondItem="Laf-L0-nhl" secondAttribute="bottom" id="nGY-VQ-3ud"/>
                                         <constraint firstAttribute="width" secondItem="Eay-9M-ZO0" secondAttribute="height" multiplier="1:1" id="p72-ac-UUu"/>
                                     </constraints>
                                 </view>
@@ -91,15 +108,16 @@ Pattiserie</string>
                     <color key="backgroundColor" red="0.76382938509999998" green="0.27447706649999998" blue="0.96298513100000005" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="YHB-uh-4EK" firstAttribute="width" secondItem="qWb-Bt-Adi" secondAttribute="width" id="9SN-dm-7zp"/>
+                        <constraint firstItem="ErQ-1W-J2Z" firstAttribute="top" secondItem="TTf-Il-ycC" secondAttribute="top" priority="900" constant="8" id="AdC-IL-bhM"/>
                         <constraint firstItem="WE1-ec-B1K" firstAttribute="leading" secondItem="TTf-Il-ycC" secondAttribute="leading" id="Jag-Nu-y9m"/>
                         <constraint firstItem="YHB-uh-4EK" firstAttribute="width" secondItem="ErQ-1W-J2Z" secondAttribute="width" id="LW4-l9-6Ev"/>
+                        <constraint firstAttribute="bottom" secondItem="qWb-Bt-Adi" secondAttribute="bottom" priority="900" constant="8" id="MkK-Ih-fHT"/>
                         <constraint firstAttribute="bottom" secondItem="WE1-ec-B1K" secondAttribute="bottom" id="Wl8-5W-CBe"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qWb-Bt-Adi" secondAttribute="bottom" constant="8" id="Wp1-TH-hYw"/>
                         <constraint firstAttribute="centerY" secondItem="fEb-OM-Kb9" secondAttribute="centerY" id="YfO-bc-dA9"/>
                         <constraint firstAttribute="trailing" secondItem="fEb-OM-Kb9" secondAttribute="trailing" constant="15" id="YsX-hp-o8h"/>
                         <constraint firstItem="ErQ-1W-J2Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TTf-Il-ycC" secondAttribute="top" constant="8" id="e0t-H0-hdz"/>
                         <constraint firstItem="YHB-uh-4EK" firstAttribute="top" secondItem="ErQ-1W-J2Z" secondAttribute="bottom" constant="8" symbolic="YES" id="eDM-JA-s5q"/>
-                        <constraint firstItem="qWb-Bt-Adi" firstAttribute="height" secondItem="YHB-uh-4EK" secondAttribute="height" id="gVM-Ja-jTz"/>
                         <constraint firstItem="ErQ-1W-J2Z" firstAttribute="leading" secondItem="WE1-ec-B1K" secondAttribute="trailing" constant="17" id="h6B-Rm-tKV"/>
                         <constraint firstItem="YHB-uh-4EK" firstAttribute="leading" secondItem="ErQ-1W-J2Z" secondAttribute="leading" id="h7F-sj-kYA"/>
                         <constraint firstItem="qWb-Bt-Adi" firstAttribute="top" secondItem="YHB-uh-4EK" secondAttribute="bottom" constant="6" id="ksa-te-C1k"/>
@@ -118,7 +136,7 @@ Pattiserie</string>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="177" y="-210"/>
+            <point key="canvasLocation" x="176" y="-227"/>
         </view>
     </objects>
 </document>

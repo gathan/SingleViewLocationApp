@@ -180,6 +180,10 @@
     [self.venueDataSource fetchVenuesForLocationCoordinate:mapView.region.center];
 }
 
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
+    [self makeVenueMiniInfoViewHidden:YES animated:YES completion:nil];
+}
+
 - (MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     MKAnnotationView *annotationViewToReturn;
     if ([annotation isKindOfClass:[Venue class]])

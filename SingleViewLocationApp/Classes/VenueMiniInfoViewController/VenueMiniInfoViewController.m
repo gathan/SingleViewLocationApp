@@ -107,11 +107,15 @@
 }
 
 - (NSArray*)titleLabels{
-    return @[self.venueSuperTitleLabel, self.venueMiniTitleLabel];
+    return @[self.venueMiniTitleLabel];
 }
 
 - (NSArray*)titleDifferentLabels{
     return @[self.venueTitleLabel];
+}
+
+- (NSArray*)titleDifferentBoldLabels{
+    return @[self.venueSuperTitleLabel];
 }
 
 - (NSArray*)titleInvertedBoldLabels{

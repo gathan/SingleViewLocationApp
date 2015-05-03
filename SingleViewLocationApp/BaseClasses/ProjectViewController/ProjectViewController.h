@@ -11,6 +11,7 @@
 #import "ProjectGraphicsProxy.h"
 #import "UIView+ProjectAdditions.h"
 #import "NSString+Translations.h"
+#import "ProjectLabel.h"
 
 @interface ProjectViewController : UIViewController <GraphicsProtocol>
 
