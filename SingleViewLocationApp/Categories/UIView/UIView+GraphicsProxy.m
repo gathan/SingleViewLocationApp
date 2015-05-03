@@ -21,9 +21,9 @@
 - (void)markLabelAsTitleThatIsBold:(BOOL)bold{
     UIFont *font;
     if (bold) {
-        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:12];
     }else{
-        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:12];
     }
     
     [self applyFont:font];
@@ -34,9 +34,9 @@
 - (void)markLabelAsTitleDifferentThatIsBold:(BOOL)bold{
     UIFont *font;
     if (bold) {
-        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:12];
     }else{
-        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:12];
     }
     
     [self applyFont:font];
@@ -47,9 +47,9 @@
 - (void)markLabelAsTitleInvertedThatIsBold:(BOOL)bold{
     UIFont *font;
     if (bold) {
-        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleBoldTextFontWithSize:12];
     }else{
-        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] titleTextFontWithSize:12];
     }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
@@ -59,9 +59,9 @@
 - (void)markLabelAsBodyThatIsBold:(BOOL)bold{
     UIFont *font;
     if (bold) {
-        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:12];
     }else{
-        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:12];
     }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;
@@ -71,9 +71,9 @@
 - (void)markLabelAsBodyInvertedThatIsBold:(BOOL)bold{
     UIFont *font;
     if (bold) {
-        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] bodyBoldTextFontWithSize:12];
     }else{
-        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:0];
+        font = [[ProjectGraphicsProxy sharedProxy] bodyTextFontWithSize:12];
     }
     [self applyFont:font];
     UILabel *label = (UILabel*)self;

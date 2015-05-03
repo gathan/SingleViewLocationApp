@@ -27,19 +27,23 @@
 }
 
 - (UIFont*)titleTextFontWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"HelveticaNeue" size:size];
+    UIFont *titleTextFont = [UIFont fontWithName:@"HelveticaNeue" size:size];
+    return titleTextFont;
 }
 
 - (UIFont*)titleBoldTextFontWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
+    UIFont *titleBoldTextFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
+    return titleBoldTextFont;
 }
 
 - (UIFont*)bodyTextFontWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"HelveticaNeue" size:size];
+    UIFont *bodyTextFont = [UIFont fontWithName:@"HelveticaNeue" size:size];
+    return bodyTextFont;
 }
 
 - (UIFont*)bodyBoldTextFontWithSize:(CGFloat)size{
-    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
+    UIFont *bodyBoldTextFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:size];
+    return bodyBoldTextFont;
 }
 
 + (UIImage*)closeIconImage{
